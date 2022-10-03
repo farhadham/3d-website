@@ -15,7 +15,7 @@ import { useThree } from "@react-three/fiber";
       ></PresentationControls> */
 }
 
-const Scene = ({ ...props }) => {
+const Scene = ({ level }) => {
   const { nodes, materials } = useSpline(
     "https://prod.spline.design/A3MA-sg0mkfpo-xA/scene.splinecode"
   );
@@ -29,7 +29,7 @@ const Scene = ({ ...props }) => {
         polar={[0, 0]}
         azimuth={[-Math.PI / 6, Math.PI / 6]}
       >
-        <FirstFloor nodes={nodes} materials={materials} />
+        <FirstFloor nodes={nodes} materials={materials} level={level} />
         <mesh
           name="ground"
           geometry={nodes.ground.geometry}

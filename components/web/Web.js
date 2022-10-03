@@ -19,15 +19,17 @@ function Loader() {
 }
 
 const Web = () => {
+  const [level, setLevel] = useState(1);
+
   return (
-    <main className="flex max-w-screen-2xl mx-auto">
+    <main className="flex mx-auto">
       <div className="flex justify-center items-start w-4/12">
-        <Hero />
+        <Hero setLevel={setLevel} />
       </div>
       <div className="h-screen w-8/12">
         <Canvas shadows flat linear>
           <Suspense fallback={<Loader />}>
-            <Scene />
+            <Scene level={level} />
           </Suspense>
         </Canvas>
       </div>
