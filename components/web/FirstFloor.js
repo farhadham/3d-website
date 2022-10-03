@@ -79,11 +79,10 @@ const FirstFloor = ({ nodes, materials }) => {
           position={[-2.55, -217.56, 3.63]}
         />
       </group>
-      <motion.group
+      <group
         name="cv"
         position={[331, 87.55, 222.83]}
         rotation={[0, Math.PI / 4, 0]}
-        whileHover={{ y: 100 }}
       >
         <mesh
           name="Shape 4"
@@ -148,7 +147,7 @@ const FirstFloor = ({ nodes, materials }) => {
           position={[-7.2, -0.06, -5.13]}
           rotation={[-Math.PI / 2, 0, -0.68]}
         />
-      </motion.group>
+      </group>
       <group
         name="controller"
         position={[255.57, 86.47, 207.95]}
@@ -492,7 +491,7 @@ const FirstFloor = ({ nodes, materials }) => {
           position={[0, -46.51, 0]}
         />
       </group>
-      <mesh
+      <motion.mesh
         name="Github"
         geometry={nodes.Github.geometry}
         material={materials["Github Material"]}
@@ -500,6 +499,15 @@ const FirstFloor = ({ nodes, materials }) => {
         receiveShadow
         position={[299.08, 186.17, 24.96]}
         scale={0.11}
+        whileHover={{ z: 40 }}
+        onClick={() => {
+          Router.push("https://github.com/farhadham");
+        }}
+        transition={{
+          type: "spring",
+          damping: 20,
+          stiffness: 200,
+        }}
       >
         <mesh
           name="Shape1"
@@ -519,14 +527,19 @@ const FirstFloor = ({ nodes, materials }) => {
           receiveShadow
           position={[11.5, 50.56, -23.72]}
         />
-      </mesh>
+      </motion.mesh>
       <motion.group
         name="linkedin"
         position={[301.41, 257.43, 76]}
         scale={0.1}
         whileHover={{ z: 90 }}
         onClick={() => {
-          Router.push("https://linkedin.com");
+          Router.push("https://linkedin.com/in/farhadfaraji");
+        }}
+        transition={{
+          type: "spring",
+          damping: 20,
+          stiffness: 200,
         }}
       >
         <mesh
@@ -637,36 +650,6 @@ const FirstFloor = ({ nodes, materials }) => {
         receiveShadow
         position={[200, 0, 200]}
         rotation={[-Math.PI / 2, 0, 0]}
-      />
-
-      <mesh
-        name="ground"
-        geometry={nodes.ground.geometry}
-        material={materials["ground Material"]}
-        castShadow
-        receiveShadow
-        position={[4, 1, -4]}
-        rotation={[-Math.PI / 2, 0, 0]}
-      />
-      <directionalLight
-        name="Directional Light"
-        castShadow
-        intensity={1}
-        shadow-mapSize-width={1024}
-        shadow-mapSize-height={1024}
-        shadow-camera-near={-10000}
-        shadow-camera-far={100000}
-        shadow-camera-left={-500}
-        shadow-camera-right={500}
-        shadow-camera-top={500}
-        shadow-camera-bottom={-500}
-        position={[4119.54, 3964.17, 1112.96]}
-      />
-      <hemisphereLight
-        name="Default Ambient Light"
-        intensity={0.75}
-        color="#eaeaea"
-        position={[0, 1, 0]}
       />
     </group>
   );
