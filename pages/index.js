@@ -1,6 +1,7 @@
 import Web from "../components/web/Web";
 import { useState, useEffect } from "react";
 import { Html } from "@react-three/drei";
+import Router from "next/router";
 
 import BarLoader from "react-spinners/BarLoader";
 
@@ -21,6 +22,9 @@ export default function Home() {
   const [screenWidth, setScreenWidth] = useState(null);
 
   useEffect(() => {
+    if (window.innerWidth < 650) {
+      Router.push("https://fifth-design.vercel.app/");
+    }
     setScreenWidth(window.innerWidth);
   }, []);
 

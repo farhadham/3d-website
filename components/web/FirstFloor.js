@@ -3,19 +3,35 @@ import { motion } from "framer-motion-3d";
 import Router from "next/router";
 
 const FirstFloor = ({ nodes, materials, level }) => {
-  const [floorStatus, setFloorStatus] = useState();
-
   return (
     <motion.group
       name="Room1"
       initial={{ x: 0, y: 1500, z: 0 }}
-      animate={level === 1 ? { x: 0, y: 177.5, z: 0 } : { x: 0, y: 1500, z: 0 }}
+      animate={
+        level === 1 ? { x: 100, y: 177.5, z: 100 } : { x: 0, y: 1500, z: 0 }
+      }
       transition={{
         type: "tween",
         duration: 1.5,
         ease: "easeInOut",
       }}
     >
+      <motion.mesh
+        name="ball"
+        geometry={nodes.ball.geometry}
+        material={materials.arrow}
+        castShadow
+        receiveShadow
+        position={[5.94, -84.5, 17]}
+        rotation={[-Math.PI / 2, 0, 0]}
+        animate={{ y: 10 }}
+        transition={{
+          duration: 0.5,
+          repeat: Infinity,
+          repeatType: "reverse",
+          ease: "easeOut",
+        }}
+      />
       <group name="resume" position={[-75, 39.27, -175]}>
         <mesh
           name="Rectangle 2"
@@ -55,7 +71,7 @@ const FirstFloor = ({ nodes, materials, level }) => {
         />
       </group>
       <group name="plant" position={[-122.37, -105.03, -143.73]}>
-        <mesh
+        <motion.mesh
           name="plant1"
           geometry={nodes.plant1.geometry}
           material={materials.plant}
@@ -63,8 +79,14 @@ const FirstFloor = ({ nodes, materials, level }) => {
           receiveShadow
           position={[-5.54, -13.85, 10.56]}
           rotation={[-1.53, 0.07, 1.75]}
+          animate={{ rotateX: -1 }}
+          transition={{
+            repeat: Infinity,
+            repeatType: "reverse",
+            duration: 2,
+          }}
         />
-        <mesh
+        <motion.mesh
           name="plant2"
           geometry={nodes.plant2.geometry}
           material={materials.plant}
@@ -72,8 +94,15 @@ const FirstFloor = ({ nodes, materials, level }) => {
           receiveShadow
           position={[-2.01, -14.38, -3.72]}
           rotation={[-1.75, 0, -1.81]}
+          animate={{ rotateX: -2 }}
+          transition={{
+            repeat: Infinity,
+            repeatType: "reverse",
+            duration: 2,
+            delay: 0.5,
+          }}
         />
-        <mesh
+        <motion.mesh
           name="plant3"
           geometry={nodes.plant3.geometry}
           material={materials.plant}
@@ -81,8 +110,15 @@ const FirstFloor = ({ nodes, materials, level }) => {
           receiveShadow
           position={[7.08, -12.64, 5.57]}
           rotation={[-Math.PI / 2, 0.1, -Math.PI]}
+          animate={{ rotateY: 0.3 }}
+          transition={{
+            repeat: Infinity,
+            repeatType: "reverse",
+            duration: 2,
+            delay: 0.5,
+          }}
         />
-        <mesh
+        <motion.mesh
           name="plant4"
           geometry={nodes.plant4.geometry}
           material={materials.plant}
@@ -90,6 +126,13 @@ const FirstFloor = ({ nodes, materials, level }) => {
           receiveShadow
           position={[-7.68, -11.83, 5.57]}
           rotation={[-Math.PI / 2, -0.06, 0]}
+          animate={{ rotateY: -0.5 }}
+          transition={{
+            repeat: Infinity,
+            repeatType: "reverse",
+            duration: 2,
+            delay: 0.5,
+          }}
         />
         <mesh
           name="pot"

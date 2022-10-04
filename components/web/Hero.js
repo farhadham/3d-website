@@ -7,7 +7,7 @@ const Hero = ({ level }) => {
     <AnimatePresence>
       {level === 1 && (
         <motion.div
-          className=" text-white text-6xl font-bold flex flex-col justify-center items-center h-full mx-6 relative"
+          className="text-white text-6xl font-bold flex flex-col justify-center items-center h-full mx-6 absolute z-20"
           initial={{ opacity: 0, x: -400 }}
           animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: -400 }}

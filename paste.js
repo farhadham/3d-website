@@ -13,8 +13,96 @@ export default function Scene({ ...props }) {
     <>
       <color attach="background" args={["#464646"]} />
       <group {...props} dispose={null}>
-        <group name="Road" position={[-52.69, 178.93, -0.93]}>
-          <group name="dead_end" position={[-2181.27, -61.82, 15.33]}>
+        <group name="Road" position={[-1370.65, 178.93, -0.93]}>
+          <group
+            name="arrow 4"
+            position={[-1017.64, -139.93, 96]}
+            rotation={[-Math.PI, 0, -Math.PI]}
+          >
+            <mesh
+              name="arrow_tri"
+              geometry={nodes.arrow_tri.geometry}
+              material={materials.arrow}
+              castShadow
+              receiveShadow
+              position={[-50.16, -4, 0]}
+              rotation={[-Math.PI / 2, 0, Math.PI / 2]}
+            />
+            <mesh
+              name="arrow_rect"
+              geometry={nodes.arrow_rect.geometry}
+              material={materials.arrow}
+              castShadow
+              receiveShadow
+              position={[25.66, -4, 1.43]}
+              rotation={[-Math.PI / 2, 0, 0]}
+            />
+          </group>
+          <group
+            name="arrow 3"
+            position={[-221.78, -139.93, 96]}
+            rotation={[-Math.PI, 0, -Math.PI]}
+          >
+            <mesh
+              name="arrow_tri1"
+              geometry={nodes.arrow_tri1.geometry}
+              material={materials.arrow}
+              castShadow
+              receiveShadow
+              position={[-50.16, -4, 0]}
+              rotation={[-Math.PI / 2, 0, Math.PI / 2]}
+            />
+            <mesh
+              name="arrow_rect1"
+              geometry={nodes.arrow_rect1.geometry}
+              material={materials.arrow}
+              castShadow
+              receiveShadow
+              position={[25.66, -4, 1.43]}
+              rotation={[-Math.PI / 2, 0, 0]}
+            />
+          </group>
+          <group name="arrow 2" position={[-401.58, -139.93, 96]}>
+            <mesh
+              name="arrow_tri2"
+              geometry={nodes.arrow_tri2.geometry}
+              material={materials.arrow}
+              castShadow
+              receiveShadow
+              position={[-50.16, -4, 0]}
+              rotation={[-Math.PI / 2, 0, Math.PI / 2]}
+            />
+            <mesh
+              name="arrow_rect2"
+              geometry={nodes.arrow_rect2.geometry}
+              material={materials.arrow}
+              castShadow
+              receiveShadow
+              position={[25.66, -4, 1.43]}
+              rotation={[-Math.PI / 2, 0, 0]}
+            />
+          </group>
+          <group name="arrow" position={[691.53, -139.93, 96]}>
+            <mesh
+              name="arrow_tri3"
+              geometry={nodes.arrow_tri3.geometry}
+              material={materials.arrow}
+              castShadow
+              receiveShadow
+              position={[-50.16, -4, 0]}
+              rotation={[-Math.PI / 2, 0, Math.PI / 2]}
+            />
+            <mesh
+              name="arrow_rect3"
+              geometry={nodes.arrow_rect3.geometry}
+              material={materials.arrow}
+              castShadow
+              receiveShadow
+              position={[25.66, -4, 1.43]}
+              rotation={[-Math.PI / 2, 0, 0]}
+            />
+          </group>
+          <group name="dead_end" position={[-1315.16, -61.82, 15.33]}>
             <group
               name="Text"
               position={[4.15, 62.22, 2.34]}
@@ -294,7 +382,7 @@ export default function Scene({ ...props }) {
           </group>
           <group
             name="node"
-            position={[-1104.2, -176.93, 312.43]}
+            position={[-1046.55, -176.93, 312.43]}
             rotation={[-Math.PI / 2, 0, 0]}
           >
             <mesh
@@ -726,7 +814,7 @@ export default function Scene({ ...props }) {
               position={[238.15, 13.5, 0]}
             />
           </group>
-          <group name="tree 9" position={[-1890.9, 9.2, -276.72]}>
+          <group name="tree 6" position={[-1470.23, 9.2, -276.72]}>
             <group name="tree_top" position={[0, 56.46, 0]}>
               <mesh
                 name="Cone 3"
@@ -762,7 +850,7 @@ export default function Scene({ ...props }) {
               position={[1.21, -70.51, 4]}
             />
           </group>
-          <group name="tree 6" position={[-1470.23, 9.2, -276.72]}>
+          <group name="tree 5" position={[-845.45, 9.2, -276.72]}>
             <group name="tree_top1" position={[0, 56.46, 0]}>
               <mesh
                 name="Cone 31"
@@ -798,7 +886,7 @@ export default function Scene({ ...props }) {
               position={[1.21, -70.51, 4]}
             />
           </group>
-          <group name="tree 5" position={[-845.45, 9.2, -276.72]}>
+          <group name="tree 3" position={[-215.2, 9.2, -276.72]}>
             <group name="tree_top2" position={[0, 56.46, 0]}>
               <mesh
                 name="Cone 32"
@@ -834,7 +922,7 @@ export default function Scene({ ...props }) {
               position={[1.21, -70.51, 4]}
             />
           </group>
-          <group name="tree 3" position={[-215.2, 9.2, -276.72]}>
+          <group name="tree 2" position={[616.95, 9.2, -287.47]}>
             <group name="tree_top3" position={[0, 56.46, 0]}>
               <mesh
                 name="Cone 33"
@@ -870,7 +958,7 @@ export default function Scene({ ...props }) {
               position={[1.21, -70.51, 4]}
             />
           </group>
-          <group name="tree 2" position={[616.95, 9.2, -287.47]}>
+          <group name="tree 4" position={[-647.88, 9.2, 273.54]}>
             <group name="tree_top4" position={[0, 56.46, 0]}>
               <mesh
                 name="Cone 34"
@@ -906,7 +994,7 @@ export default function Scene({ ...props }) {
               position={[1.21, -70.51, 4]}
             />
           </group>
-          <group name="tree 8" position={[-1895.31, 9.2, 273.54]}>
+          <group name="tree" position={[165.19, 9.2, 273.54]}>
             <group name="tree_top5" position={[0, 56.46, 0]}>
               <mesh
                 name="Cone 35"
@@ -942,114 +1030,6 @@ export default function Scene({ ...props }) {
               position={[1.21, -70.51, 4]}
             />
           </group>
-          <group name="tree 7" position={[-1570.17, 9.2, 273.54]}>
-            <group name="tree_top6" position={[0, 56.46, 0]}>
-              <mesh
-                name="Cone 36"
-                geometry={nodes["Cone 36"].geometry}
-                material={materials.plant}
-                castShadow
-                receiveShadow
-                position={[0, 58.55, 0]}
-              />
-              <mesh
-                name="Cone 26"
-                geometry={nodes["Cone 26"].geometry}
-                material={materials.plant}
-                castShadow
-                receiveShadow
-                position={[0, 1.77, 0]}
-              />
-              <mesh
-                name="Cone6"
-                geometry={nodes.Cone6.geometry}
-                material={materials.plant}
-                castShadow
-                receiveShadow
-                position={[0, -58.55, 0]}
-              />
-            </group>
-            <mesh
-              name="tree_body6"
-              geometry={nodes.tree_body6.geometry}
-              material={materials.piano_chair_leg}
-              castShadow
-              receiveShadow
-              position={[1.21, -70.51, 4]}
-            />
-          </group>
-          <group name="tree 4" position={[-647.88, 9.2, 273.54]}>
-            <group name="tree_top7" position={[0, 56.46, 0]}>
-              <mesh
-                name="Cone 37"
-                geometry={nodes["Cone 37"].geometry}
-                material={materials.plant}
-                castShadow
-                receiveShadow
-                position={[0, 58.55, 0]}
-              />
-              <mesh
-                name="Cone 27"
-                geometry={nodes["Cone 27"].geometry}
-                material={materials.plant}
-                castShadow
-                receiveShadow
-                position={[0, 1.77, 0]}
-              />
-              <mesh
-                name="Cone7"
-                geometry={nodes.Cone7.geometry}
-                material={materials.plant}
-                castShadow
-                receiveShadow
-                position={[0, -58.55, 0]}
-              />
-            </group>
-            <mesh
-              name="tree_body7"
-              geometry={nodes.tree_body7.geometry}
-              material={materials.piano_chair_leg}
-              castShadow
-              receiveShadow
-              position={[1.21, -70.51, 4]}
-            />
-          </group>
-          <group name="tree" position={[165.19, 9.2, 273.54]}>
-            <group name="tree_top8" position={[0, 56.46, 0]}>
-              <mesh
-                name="Cone 38"
-                geometry={nodes["Cone 38"].geometry}
-                material={materials.plant}
-                castShadow
-                receiveShadow
-                position={[0, 58.55, 0]}
-              />
-              <mesh
-                name="Cone 28"
-                geometry={nodes["Cone 28"].geometry}
-                material={materials.plant}
-                castShadow
-                receiveShadow
-                position={[0, 1.77, 0]}
-              />
-              <mesh
-                name="Cone8"
-                geometry={nodes.Cone8.geometry}
-                material={materials.plant}
-                castShadow
-                receiveShadow
-                position={[0, -58.55, 0]}
-              />
-            </group>
-            <mesh
-              name="tree_body8"
-              geometry={nodes.tree_body8.geometry}
-              material={materials.piano_chair_leg}
-              castShadow
-              receiveShadow
-              position={[1.21, -70.51, 4]}
-            />
-          </group>
           <mesh
             name="Road_white"
             geometry={nodes.Road_white.geometry}
@@ -1065,11 +1045,20 @@ export default function Scene({ ...props }) {
             material={materials.road}
             castShadow
             receiveShadow
-            position={[-639.51, -170.65, 0.93]}
+            position={[-205.55, -170.65, 0.93]}
             rotation={[-Math.PI / 2, 0, 0]}
           />
         </group>
-        <group name="Room1" position={[1478.1, 177.5, 200]}>
+        <group name="Room1" position={[369.06, 177.5, 200]}>
+          <mesh
+            name="ball"
+            geometry={nodes.ball.geometry}
+            material={materials.arrow}
+            castShadow
+            receiveShadow
+            position={[5.94, -84.5, 17]}
+            rotation={[-Math.PI / 2, 0, 0]}
+          />
           <group name="resume" position={[-75, 39.27, -175]}>
             <mesh
               name="Rectangle 2"
@@ -1641,19 +1630,16 @@ export default function Scene({ ...props }) {
             rotation={[-Math.PI / 2, 0, 0]}
           />
         </group>
-        <directionalLight
-          name="Directional Light"
+        <pointLight
+          name="Point Light"
           castShadow
           intensity={1}
+          distance={2000}
           shadow-mapSize-width={1024}
           shadow-mapSize-height={1024}
-          shadow-camera-near={-10000}
+          shadow-camera-near={100}
           shadow-camera-far={100000}
-          shadow-camera-left={-500}
-          shadow-camera-right={500}
-          shadow-camera-top={500}
-          shadow-camera-bottom={-500}
-          position={[4119.54, 3964.17, 1112.96]}
+          position={[760.12, 981.41, 302.19]}
         />
         <mesh
           name="ground"
@@ -1667,11 +1653,11 @@ export default function Scene({ ...props }) {
         <OrthographicCamera
           name="Camera"
           makeDefault={true}
-          zoom={0.81}
+          zoom={1.85}
           far={100000}
           near={-100000}
           up={[0, 1, 0]}
-          position={[220.81, -286.83, -146.9]}
+          position={[883.96, 643.63, 689.92]}
           rotation={[-Math.PI / 4, 0.62, Math.PI / 6]}
         />
         <hemisphereLight

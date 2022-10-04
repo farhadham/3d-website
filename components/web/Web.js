@@ -5,6 +5,7 @@ import Scene from "./Scene";
 import BarLoader from "react-spinners/BarLoader";
 import Hero from "./Hero";
 import NextButton from "./common/NextButton";
+import About from "./About";
 
 const override = {
   display: "block",
@@ -24,11 +25,12 @@ const Web = () => {
 
   return (
     <main className="h-screen mx-auto flex flex-col lg:flex-row">
-      <div className="mt-32 pb-32 lg:my-0 flex flex-col justify-center items-center lg:w-4/12 relative">
+      <div className="h-3/6 lg:h-full  flex flex-col justify-center items-center lg:w-4/12 relative">
         <Hero level={level} />
+        <About level={level} />
         <NextButton setLevel={setLevel} level={level} />
       </div>
-      <div className="h-full lg:w-8/12">
+      <div className="h-3/6 lg:h-full lg:w-8/12">
         <Canvas shadows flat linear>
           <Suspense fallback={<Loader />}>
             <Scene level={level} />

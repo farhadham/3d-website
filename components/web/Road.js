@@ -1,24 +1,137 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion-3d";
 
 const Road = ({ nodes, materials, level }) => {
+  const [roadPart, setRoadPart] = useState(1);
+
+  let animateTo;
+  if (roadPart === 1) {
+    animateTo = { x: -500, y: 178.93, z: -0.93 };
+  } else if (roadPart === 2) {
+    animateTo = { x: 500, y: 178.93, z: -0.93 };
+  } else {
+    animateTo = { x: 1200, y: 178.93, z: -0.93 };
+  }
+
   return (
     <motion.group
       name="Road"
       position={[-800, 178.93, -0.93]}
       initial={{ x: 0, y: 1500, z: 0 }}
-      animate={
-        level === 2
-          ? { x: -800, y: 178.93, z: -0.93 }
-          : { x: -800, y: 1500, z: -0.93 }
-      }
+      animate={level === 2 ? animateTo : { x: -500, y: 1500, z: -0.93 }}
       transition={{
         type: "tween",
         duration: 1.5,
         ease: "easeInOut",
       }}
     >
-      <group name="dead_end" position={[-2181.27, -61.82, 15.33]}>
+      <group
+        name="arrow 4"
+        position={[-1017.64, -139.93, 96]}
+        rotation={[-Math.PI, 0, -Math.PI]}
+        onClick={() => {
+          setRoadPart(2);
+        }}
+      >
+        <mesh
+          name="arrow_tri"
+          geometry={nodes.arrow_tri.geometry}
+          material={materials.arrow}
+          castShadow
+          receiveShadow
+          position={[-50.16, -4, 0]}
+          rotation={[-Math.PI / 2, 0, Math.PI / 2]}
+        />
+        <mesh
+          name="arrow_rect"
+          geometry={nodes.arrow_rect.geometry}
+          material={materials.arrow}
+          castShadow
+          receiveShadow
+          position={[25.66, -4, 1.43]}
+          rotation={[-Math.PI / 2, 0, 0]}
+        />
+      </group>
+      <group
+        name="arrow 3"
+        position={[-221.78, -139.93, 96]}
+        rotation={[-Math.PI, 0, -Math.PI]}
+        onClick={() => {
+          setRoadPart(1);
+        }}
+      >
+        <mesh
+          name="arrow_tri1"
+          geometry={nodes.arrow_tri1.geometry}
+          material={materials.arrow}
+          castShadow
+          receiveShadow
+          position={[-50.16, -4, 0]}
+          rotation={[-Math.PI / 2, 0, Math.PI / 2]}
+        />
+        <mesh
+          name="arrow_rect1"
+          geometry={nodes.arrow_rect1.geometry}
+          material={materials.arrow}
+          castShadow
+          receiveShadow
+          position={[25.66, -4, 1.43]}
+          rotation={[-Math.PI / 2, 0, 0]}
+        />
+      </group>
+      <group
+        name="arrow 2"
+        position={[-401.58, -139.93, 96]}
+        onClick={() => {
+          setRoadPart(3);
+        }}
+      >
+        <mesh
+          name="arrow_tri2"
+          geometry={nodes.arrow_tri2.geometry}
+          material={materials.arrow}
+          castShadow
+          receiveShadow
+          position={[-50.16, -4, 0]}
+          rotation={[-Math.PI / 2, 0, Math.PI / 2]}
+        />
+        <mesh
+          name="arrow_rect2"
+          geometry={nodes.arrow_rect2.geometry}
+          material={materials.arrow}
+          castShadow
+          receiveShadow
+          position={[25.66, -4, 1.43]}
+          rotation={[-Math.PI / 2, 0, 0]}
+        />
+      </group>
+      <group
+        name="arrow"
+        position={[691.53, -139.93, 96]}
+        onClick={() => {
+          setRoadPart(2);
+        }}
+      >
+        <mesh
+          name="arrow_tri3"
+          geometry={nodes.arrow_tri3.geometry}
+          material={materials.arrow}
+          castShadow
+          receiveShadow
+          position={[-50.16, -4, 0]}
+          rotation={[-Math.PI / 2, 0, Math.PI / 2]}
+        />
+        <mesh
+          name="arrow_rect3"
+          geometry={nodes.arrow_rect3.geometry}
+          material={materials.arrow}
+          castShadow
+          receiveShadow
+          position={[25.66, -4, 1.43]}
+          rotation={[-Math.PI / 2, 0, 0]}
+        />
+      </group>
+      <group name="dead_end" position={[-1315.16, -61.82, 15.33]}>
         <group
           name="Text"
           position={[4.15, 62.22, 2.34]}
@@ -27,7 +140,7 @@ const Road = ({ nodes, materials, level }) => {
           <mesh
             name="D"
             geometry={nodes.D.geometry}
-            material={materials.piano_key_white}
+            material={materials["My Text Material"]}
             castShadow
             receiveShadow
             position={[-28.33, 0, 0]}
@@ -35,7 +148,7 @@ const Road = ({ nodes, materials, level }) => {
           <mesh
             name="E"
             geometry={nodes.E.geometry}
-            material={materials.piano_key_white}
+            material={materials["My Text Material"]}
             castShadow
             receiveShadow
             position={[-13.69, 0, 0]}
@@ -43,7 +156,7 @@ const Road = ({ nodes, materials, level }) => {
           <mesh
             name="A"
             geometry={nodes.A.geometry}
-            material={materials.piano_key_white}
+            material={materials["My Text Material"]}
             castShadow
             receiveShadow
             position={[-0.7, 0, 0]}
@@ -51,7 +164,7 @@ const Road = ({ nodes, materials, level }) => {
           <mesh
             name="D1"
             geometry={nodes.D1.geometry}
-            material={materials.piano_key_white}
+            material={materials["My Text Material"]}
             castShadow
             receiveShadow
             position={[13.69, 0, 0]}
@@ -59,7 +172,7 @@ const Road = ({ nodes, materials, level }) => {
           <mesh
             name="E1"
             geometry={nodes.E1.geometry}
-            material={materials.piano_key_white}
+            material={materials["My Text Material"]}
             castShadow
             receiveShadow
             position={[-21.74, -24, 0]}
@@ -67,7 +180,7 @@ const Road = ({ nodes, materials, level }) => {
           <mesh
             name="N"
             geometry={nodes.N.geometry}
-            material={materials.piano_key_white}
+            material={materials["My Text Material"]}
             castShadow
             receiveShadow
             position={[-8.75, -24, 0]}
@@ -75,7 +188,7 @@ const Road = ({ nodes, materials, level }) => {
           <mesh
             name="D2"
             geometry={nodes.D2.geometry}
-            material={materials.piano_key_white}
+            material={materials["My Text Material"]}
             castShadow
             receiveShadow
             position={[7.1, -24, 0]}
@@ -100,7 +213,7 @@ const Road = ({ nodes, materials, level }) => {
           position={[-3.02, -32.27, 0.3]}
         />
       </group>
-      <group name="sign 5" position={[-1233.4, -177.35, -268.69]}>
+      <group name="sign 5" position={[-1233.4, -85, -268.69]}>
         <mesh
           name="Rectangle1"
           geometry={nodes.Rectangle1.geometry}
@@ -128,7 +241,7 @@ const Road = ({ nodes, materials, level }) => {
           rotation={[-Math.PI / 2, 0, 0]}
         />
       </group>
-      <group name="sign 4" position={[-471.01, -177.35, -268.69]}>
+      <group name="sign 4" position={[-471.01, -85, -268.69]}>
         <mesh
           name="Rectangle2"
           geometry={nodes.Rectangle2.geometry}
@@ -156,7 +269,7 @@ const Road = ({ nodes, materials, level }) => {
           rotation={[-Math.PI / 2, 0, 0]}
         />
       </group>
-      <group name="sign 3" position={[191.62, -177.35, -268.69]}>
+      <group name="sign 3" position={[191.62, -85, -268.69]}>
         <mesh
           name="Rectangle3"
           geometry={nodes.Rectangle3.geometry}
@@ -184,7 +297,7 @@ const Road = ({ nodes, materials, level }) => {
           rotation={[-Math.PI / 2, 0, 0]}
         />
       </group>
-      <group name="sign 7" position={[32.81, -177.35, -268.69]}>
+      <group name="sign 7" position={[32.81, -85, -268.69]}>
         <mesh
           name="Rectangle4"
           geometry={nodes.Rectangle4.geometry}
@@ -212,7 +325,7 @@ const Road = ({ nodes, materials, level }) => {
           rotation={[-Math.PI / 2, 0, 0]}
         />
       </group>
-      <group name="sign 6" position={[-1081.85, -177.35, -268.69]}>
+      <group name="sign 6" position={[-1081.85, -85, -268.69]}>
         <mesh
           name="Rectangle5"
           geometry={nodes.Rectangle5.geometry}
@@ -240,7 +353,7 @@ const Road = ({ nodes, materials, level }) => {
           rotation={[-Math.PI / 2, 0, 0]}
         />
       </group>
-      <group name="sign 2" position={[350.31, -177.35, -268.69]}>
+      <group name="sign 2" position={[350.31, -85, -268.69]}>
         <mesh
           name="Rectangle6"
           geometry={nodes.Rectangle6.geometry}
@@ -268,7 +381,7 @@ const Road = ({ nodes, materials, level }) => {
           rotation={[-Math.PI / 2, 0, 0]}
         />
       </group>
-      <group name="sign" position={[-622.1, -177.35, -268.69]}>
+      <group name="sign" position={[-622.1, -85, -268.69]}>
         <mesh
           name="Rectangle7"
           geometry={nodes.Rectangle7.geometry}
@@ -730,42 +843,7 @@ const Road = ({ nodes, materials, level }) => {
           position={[238.15, 13.5, 0]}
         />
       </group>
-      <group name="tree 9" position={[-1890.9, 9.2, -276.72]}>
-        <group name="tree_top" position={[0, 56.46, 0]}>
-          <mesh
-            name="Cone 3"
-            geometry={nodes["Cone 3"].geometry}
-            material={materials.plant}
-            castShadow
-            receiveShadow
-            position={[0, 58.55, 0]}
-          />
-          <mesh
-            name="Cone 2"
-            geometry={nodes["Cone 2"].geometry}
-            material={materials.plant}
-            castShadow
-            receiveShadow
-            position={[0, 1.77, 0]}
-          />
-          <mesh
-            name="Cone"
-            geometry={nodes.Cone.geometry}
-            material={materials.plant}
-            castShadow
-            receiveShadow
-            position={[0, -58.55, 0]}
-          />
-        </group>
-        <mesh
-          name="tree_body"
-          geometry={nodes.tree_body.geometry}
-          material={materials.piano_chair_leg}
-          castShadow
-          receiveShadow
-          position={[1.21, -70.51, 4]}
-        />
-      </group>
+
       <group name="tree 6" position={[-1470.23, 9.2, -276.72]}>
         <group name="tree_top1" position={[0, 56.46, 0]}>
           <mesh
@@ -910,150 +988,6 @@ const Road = ({ nodes, materials, level }) => {
           position={[1.21, -70.51, 4]}
         />
       </group>
-      <group name="tree 8" position={[-1895.31, 9.2, 273.54]}>
-        <group name="tree_top5" position={[0, 56.46, 0]}>
-          <mesh
-            name="Cone 35"
-            geometry={nodes["Cone 35"].geometry}
-            material={materials.plant}
-            castShadow
-            receiveShadow
-            position={[0, 58.55, 0]}
-          />
-          <mesh
-            name="Cone 25"
-            geometry={nodes["Cone 25"].geometry}
-            material={materials.plant}
-            castShadow
-            receiveShadow
-            position={[0, 1.77, 0]}
-          />
-          <mesh
-            name="Cone5"
-            geometry={nodes.Cone5.geometry}
-            material={materials.plant}
-            castShadow
-            receiveShadow
-            position={[0, -58.55, 0]}
-          />
-        </group>
-        <mesh
-          name="tree_body5"
-          geometry={nodes.tree_body5.geometry}
-          material={materials.piano_chair_leg}
-          castShadow
-          receiveShadow
-          position={[1.21, -70.51, 4]}
-        />
-      </group>
-      <group name="tree 7" position={[-1570.17, 9.2, 273.54]}>
-        <group name="tree_top6" position={[0, 56.46, 0]}>
-          <mesh
-            name="Cone 36"
-            geometry={nodes["Cone 36"].geometry}
-            material={materials.plant}
-            castShadow
-            receiveShadow
-            position={[0, 58.55, 0]}
-          />
-          <mesh
-            name="Cone 26"
-            geometry={nodes["Cone 26"].geometry}
-            material={materials.plant}
-            castShadow
-            receiveShadow
-            position={[0, 1.77, 0]}
-          />
-          <mesh
-            name="Cone6"
-            geometry={nodes.Cone6.geometry}
-            material={materials.plant}
-            castShadow
-            receiveShadow
-            position={[0, -58.55, 0]}
-          />
-        </group>
-        <mesh
-          name="tree_body6"
-          geometry={nodes.tree_body6.geometry}
-          material={materials.piano_chair_leg}
-          castShadow
-          receiveShadow
-          position={[1.21, -70.51, 4]}
-        />
-      </group>
-      <group name="tree 4" position={[-647.88, 9.2, 273.54]}>
-        <group name="tree_top7" position={[0, 56.46, 0]}>
-          <mesh
-            name="Cone 37"
-            geometry={nodes["Cone 37"].geometry}
-            material={materials.plant}
-            castShadow
-            receiveShadow
-            position={[0, 58.55, 0]}
-          />
-          <mesh
-            name="Cone 27"
-            geometry={nodes["Cone 27"].geometry}
-            material={materials.plant}
-            castShadow
-            receiveShadow
-            position={[0, 1.77, 0]}
-          />
-          <mesh
-            name="Cone7"
-            geometry={nodes.Cone7.geometry}
-            material={materials.plant}
-            castShadow
-            receiveShadow
-            position={[0, -58.55, 0]}
-          />
-        </group>
-        <mesh
-          name="tree_body7"
-          geometry={nodes.tree_body7.geometry}
-          material={materials.piano_chair_leg}
-          castShadow
-          receiveShadow
-          position={[1.21, -70.51, 4]}
-        />
-      </group>
-      <group name="tree" position={[165.19, 9.2, 273.54]}>
-        <group name="tree_top8" position={[0, 56.46, 0]}>
-          <mesh
-            name="Cone 38"
-            geometry={nodes["Cone 38"].geometry}
-            material={materials.plant}
-            castShadow
-            receiveShadow
-            position={[0, 58.55, 0]}
-          />
-          <mesh
-            name="Cone 28"
-            geometry={nodes["Cone 28"].geometry}
-            material={materials.plant}
-            castShadow
-            receiveShadow
-            position={[0, 1.77, 0]}
-          />
-          <mesh
-            name="Cone8"
-            geometry={nodes.Cone8.geometry}
-            material={materials.plant}
-            castShadow
-            receiveShadow
-            position={[0, -58.55, 0]}
-          />
-        </group>
-        <mesh
-          name="tree_body8"
-          geometry={nodes.tree_body8.geometry}
-          material={materials.piano_chair_leg}
-          castShadow
-          receiveShadow
-          position={[1.21, -70.51, 4]}
-        />
-      </group>
       <mesh
         name="Road_white"
         geometry={nodes.Road_white.geometry}
@@ -1069,7 +1003,7 @@ const Road = ({ nodes, materials, level }) => {
         material={materials.road}
         castShadow
         receiveShadow
-        position={[-639.51, -170.65, 0.93]}
+        position={[-205.55, -170.65, 0.93]}
         rotation={[-Math.PI / 2, 0, 0]}
       />
     </motion.group>

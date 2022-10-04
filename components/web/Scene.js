@@ -39,7 +39,7 @@ const Scene = ({ level }) => {
           position={[4, 1, -4]}
           rotation={[-Math.PI / 2, 0, 0]}
         />
-        <directionalLight
+        {/* <directionalLight
           name="Directional Light"
           castShadow
           intensity={1}
@@ -51,7 +51,18 @@ const Scene = ({ level }) => {
           shadow-camera-right={500}
           shadow-camera-top={500}
           shadow-camera-bottom={-500}
-          position={[4119.54, 3964.17, 1112.96]}
+          position={[3119.54, 4064.17, 1012.96]}
+        /> */}
+        <pointLight
+          name="Point Light"
+          castShadow
+          intensity={1.5}
+          distance={2000}
+          shadow-mapSize-width={1024}
+          shadow-mapSize-height={1024}
+          shadow-camera-near={100}
+          shadow-camera-far={100000}
+          position={[760.12, 981.41, 302.19]}
         />
         <hemisphereLight
           name="Default Ambient Light"

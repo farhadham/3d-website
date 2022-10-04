@@ -3,8 +3,6 @@ import { motion } from "framer-motion-3d";
 import Router from "next/router";
 
 const FirstFloor = ({ nodes, materials, level }) => {
-  const [floorStatus, setFloorStatus] = useState();
-
   return (
     <motion.group
       name="Room1"
