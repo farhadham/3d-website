@@ -32,14 +32,23 @@ const FirstFloor = ({ nodes, materials, level }) => {
           ease: "easeOut",
         }}
       />
-      <group name="resume" position={[-75, 39.27, -175]}>
-        <mesh
+      <motion.group name="resume" position={[-75, 39.27, -175]}>
+        <motion.mesh
           name="Rectangle 2"
           geometry={nodes["Rectangle 2"].geometry}
           material={materials["Rectangle 2 Material"]}
           castShadow
           receiveShadow
           position={[0, -0.27, 1]}
+          whileHover={{ z: 20 }}
+          onClick={() => {
+            window.open("https://resume-two-orcin.vercel.app/", "_blank");
+          }}
+          transition={{
+            type: "spring",
+            damping: 20,
+            stiffness: 200,
+          }}
         />
         <mesh
           name="Rectangle8"
@@ -49,7 +58,7 @@ const FirstFloor = ({ nodes, materials, level }) => {
           receiveShadow
           position={[0, 0, -2]}
         />
-      </group>
+      </motion.group>
       <group name="carpet" position={[87.82, -154.45, 34]}>
         <mesh
           name="Ellipse 2"
@@ -519,7 +528,20 @@ const FirstFloor = ({ nodes, materials, level }) => {
           position={[0, -46.51, 0]}
         />
       </group>
-      <group name="linkedin" position={[101.41, 42.28, -124]} scale={0.1}>
+      <motion.group
+        name="linkedin"
+        position={[101.41, 42.28, -124]}
+        scale={0.1}
+        whileHover={{ z: -100 }}
+        onClick={() => {
+          window.open("https://linkedin.com/in/farhadfaraji", "_blank");
+        }}
+        transition={{
+          type: "spring",
+          damping: 20,
+          stiffness: 200,
+        }}
+      >
         <mesh
           name="Merged Geometry"
           geometry={nodes["Merged Geometry"].geometry}
@@ -535,7 +557,7 @@ const FirstFloor = ({ nodes, materials, level }) => {
           receiveShadow
           position={[-10.69, 0, -532.64]}
         />
-      </group>
+      </motion.group>
       <mesh
         name="wall_right"
         geometry={nodes.wall_right.geometry}
