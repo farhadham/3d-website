@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion-3d";
+import Router from "next/router";
 
 const Road = ({ nodes, materials, level }) => {
   const [roadPart, setRoadPart] = useState(1);
@@ -25,13 +26,15 @@ const Road = ({ nodes, materials, level }) => {
         ease: "easeInOut",
       }}
     >
-      <group
+      <motion.group
         name="arrow 4"
         position={[-1017.64, -139.93, 96]}
         rotation={[-Math.PI, 0, -Math.PI]}
         onClick={() => {
           setRoadPart(2);
         }}
+        animate={{ x: -970 }}
+        transition={{ duration: 0.7, repeat: Infinity, repeatType: "reverse" }}
       >
         <mesh
           name="arrow_tri"
@@ -51,14 +54,16 @@ const Road = ({ nodes, materials, level }) => {
           position={[25.66, -4, 1.43]}
           rotation={[-Math.PI / 2, 0, 0]}
         />
-      </group>
-      <group
+      </motion.group>
+      <motion.group
         name="arrow 3"
         position={[-221.78, -139.93, 96]}
         rotation={[-Math.PI, 0, -Math.PI]}
         onClick={() => {
           setRoadPart(1);
         }}
+        animate={{ x: -180 }}
+        transition={{ duration: 0.7, repeat: Infinity, repeatType: "reverse" }}
       >
         <mesh
           name="arrow_tri1"
@@ -78,13 +83,15 @@ const Road = ({ nodes, materials, level }) => {
           position={[25.66, -4, 1.43]}
           rotation={[-Math.PI / 2, 0, 0]}
         />
-      </group>
-      <group
+      </motion.group>
+      <motion.group
         name="arrow 2"
         position={[-401.58, -139.93, 96]}
         onClick={() => {
           setRoadPart(3);
         }}
+        animate={{ x: -450 }}
+        transition={{ duration: 0.7, repeat: Infinity, repeatType: "reverse" }}
       >
         <mesh
           name="arrow_tri2"
@@ -104,13 +111,15 @@ const Road = ({ nodes, materials, level }) => {
           position={[25.66, -4, 1.43]}
           rotation={[-Math.PI / 2, 0, 0]}
         />
-      </group>
-      <group
+      </motion.group>
+      <motion.group
         name="arrow"
         position={[691.53, -139.93, 96]}
         onClick={() => {
           setRoadPart(2);
         }}
+        animate={{ x: 650 }}
+        transition={{ duration: 0.7, repeat: Infinity, repeatType: "reverse" }}
       >
         <mesh
           name="arrow_tri3"
@@ -130,7 +139,7 @@ const Road = ({ nodes, materials, level }) => {
           position={[25.66, -4, 1.43]}
           rotation={[-Math.PI / 2, 0, 0]}
         />
-      </group>
+      </motion.group>
       <group name="dead_end" position={[-1315.16, -61.82, 15.33]}>
         <group
           name="Text"
@@ -213,7 +222,14 @@ const Road = ({ nodes, materials, level }) => {
           position={[-3.02, -32.27, 0.3]}
         />
       </group>
-      <group name="sign 5" position={[-1233.4, -85, -268.69]}>
+      <motion.group
+        name="sign 5"
+        position={[-1233.4, -85, -268.69]}
+        whileHover={{ y: -60 }}
+        onClick={() => {
+          window.open("https://karla-online.com/", "_blank");
+        }}
+      >
         <mesh
           name="Rectangle1"
           geometry={nodes.Rectangle1.geometry}
@@ -240,8 +256,15 @@ const Road = ({ nodes, materials, level }) => {
           position={[0.38, -32.67, -2.66]}
           rotation={[-Math.PI / 2, 0, 0]}
         />
-      </group>
-      <group name="sign 4" position={[-471.01, -85, -268.69]}>
+      </motion.group>
+      <motion.group
+        name="sign 4"
+        position={[-471.01, -85, -268.69]}
+        whileHover={{ y: -60 }}
+        onClick={() => {
+          window.open("https://sorex-landingpage.vercel.app/", "_blank");
+        }}
+      >
         <mesh
           name="Rectangle2"
           geometry={nodes.Rectangle2.geometry}
@@ -268,8 +291,15 @@ const Road = ({ nodes, materials, level }) => {
           position={[0.38, -32.67, -2.66]}
           rotation={[-Math.PI / 2, 0, 0]}
         />
-      </group>
-      <group name="sign 3" position={[191.62, -85, -268.69]}>
+      </motion.group>
+      <motion.group
+        name="sign 3"
+        position={[191.62, -85, -268.69]}
+        whileHover={{ y: -60 }}
+        onClick={() => {
+          window.open("https://radical-security.vercel.app/", "_blank");
+        }}
+      >
         <mesh
           name="Rectangle3"
           geometry={nodes.Rectangle3.geometry}
@@ -296,8 +326,15 @@ const Road = ({ nodes, materials, level }) => {
           position={[0.38, -32.67, -2.66]}
           rotation={[-Math.PI / 2, 0, 0]}
         />
-      </group>
-      <group name="sign 7" position={[32.81, -85, -268.69]}>
+      </motion.group>
+      <motion.group
+        name="sign 7"
+        position={[32.81, -85, -268.69]}
+        whileHover={{ y: -60 }}
+        onClick={() => {
+          window.open("https://atom-libs.vercel.app/", "_blank");
+        }}
+      >
         <mesh
           name="Rectangle4"
           geometry={nodes.Rectangle4.geometry}
@@ -324,8 +361,18 @@ const Road = ({ nodes, materials, level }) => {
           position={[0.38, -32.67, -2.66]}
           rotation={[-Math.PI / 2, 0, 0]}
         />
-      </group>
-      <group name="sign 6" position={[-1081.85, -85, -268.69]}>
+      </motion.group>
+      <motion.group
+        name="sign 6"
+        position={[-1081.85, -85, -268.69]}
+        whileHover={{ y: -60 }}
+        onClick={() => {
+          window.open(
+            "https://multiplayer-shooting-game-js.herokuapp.com/",
+            "_blank"
+          );
+        }}
+      >
         <mesh
           name="Rectangle5"
           geometry={nodes.Rectangle5.geometry}
@@ -352,8 +399,15 @@ const Road = ({ nodes, materials, level }) => {
           position={[0.38, -32.67, -2.66]}
           rotation={[-Math.PI / 2, 0, 0]}
         />
-      </group>
-      <group name="sign 2" position={[350.31, -85, -268.69]}>
+      </motion.group>
+      <motion.group
+        name="sign 2"
+        position={[350.31, -85, -268.69]}
+        whileHover={{ y: -60 }}
+        onClick={() => {
+          window.open("https://then0tbot.vercel.app/", "_blank");
+        }}
+      >
         <mesh
           name="Rectangle6"
           geometry={nodes.Rectangle6.geometry}
@@ -380,8 +434,15 @@ const Road = ({ nodes, materials, level }) => {
           position={[0.38, -32.67, -2.66]}
           rotation={[-Math.PI / 2, 0, 0]}
         />
-      </group>
-      <group name="sign" position={[-622.1, -85, -268.69]}>
+      </motion.group>
+      <motion.group
+        name="sign"
+        position={[-622.1, -85, -268.69]}
+        whileHover={{ y: -60 }}
+        onClick={() => {
+          window.open("https://fifth-design.vercel.app/", "_blank");
+        }}
+      >
         <mesh
           name="Rectangle7"
           geometry={nodes.Rectangle7.geometry}
@@ -408,10 +469,10 @@ const Road = ({ nodes, materials, level }) => {
           position={[0.38, -32.67, -2.66]}
           rotation={[-Math.PI / 2, 0, 0]}
         />
-      </group>
+      </motion.group>
       <group
         name="node"
-        position={[-1104.2, -176.93, 312.43]}
+        position={[-954.2, -176.93, 312.43]}
         rotation={[-Math.PI / 2, 0, 0]}
       >
         <mesh
@@ -569,7 +630,7 @@ const Road = ({ nodes, materials, level }) => {
       </group>
       <group
         name="react"
-        position={[-298.27, -176.93, 312.43]}
+        position={[-248.27, -176.93, 312.43]}
         rotation={[-Math.PI / 2, 0, 0]}
       >
         <mesh

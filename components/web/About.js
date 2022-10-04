@@ -30,7 +30,7 @@ const About = ({ level }) => {
               <span className="text-primary">Born</span> 1996
             </p>
             <p className="font-normal mb-2">
-              <span className="text-primary">Residence</span> Iran/Turkey
+              <span className="text-primary">Residence</span> Iran / Turkey
             </p>
             <a href="mailto:farhadham2@gmail.com" className="font-normal mb-2">
               <span className="text-primary">Email</span> farhadham2@gmail.com
