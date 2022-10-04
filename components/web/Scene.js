@@ -3,8 +3,7 @@ import useSpline from "@splinetool/r3f-spline";
 import { OrthographicCamera } from "@react-three/drei";
 import { PresentationControls } from "@react-three/drei";
 import FirstFloor from "./FirstFloor";
-import { useSpring } from "framer-motion";
-import { useThree } from "@react-three/fiber";
+import Road from "./Road";
 
 {
   /* <PresentationControls
@@ -17,7 +16,7 @@ import { useThree } from "@react-three/fiber";
 
 const Scene = ({ level }) => {
   const { nodes, materials } = useSpline(
-    "https://prod.spline.design/A3MA-sg0mkfpo-xA/scene.splinecode"
+    "https://prod.spline.design/gprjBHugYEihqeMu/scene.splinecode"
   );
 
   return (
@@ -29,6 +28,7 @@ const Scene = ({ level }) => {
         polar={[0, 0]}
         azimuth={[-Math.PI / 6, Math.PI / 6]}
       >
+        <Road nodes={nodes} materials={materials} level={level} />
         <FirstFloor nodes={nodes} materials={materials} level={level} />
         <mesh
           name="ground"

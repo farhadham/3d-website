@@ -1,23 +1,40 @@
 import React from "react";
+import Button from "./common/Button";
+import { motion, AnimatePresence } from "framer-motion";
 
-const Hero = ({ setLevel }) => {
+const Hero = ({ level }) => {
   return (
-    <div className=" text-white text-6xl font-bold flex flex-col justify-center h-full mx-8">
-      <p className="text-3xl mb-2">Hi I`m </p>
-      <h1 className="text-7xl">Farhad Faraji</h1>
-      <h1 className="text-5xl">
-        <span className="text-primary">Full-Stack</span> Developer
-      </h1>
-      <button
-        onClick={() => {
-          setLevel((state) => {
-            return state === 1 ? 2 : 1;
-          });
-        }}
-      >
-        LEVEL
-      </button>
-    </div>
+    <AnimatePresence>
+      {level === 1 && (
+        <motion.div
+          className=" text-white text-6xl font-bold flex flex-col justify-center items-center h-full mx-6 relative"
+          initial={{ opacity: 0, x: -400 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: -400 }}
+          transition={{ duration: 0.5, ease: "easeInOut" }}
+        >
+          <div className="mb-8 2xl:mb-10">
+            <p className="text-xl xl:text-2xl 2xl:text-3xl mb-4">Hi I`m </p>
+            <h1 className="text-5xl xl:text-6xl 2xl:text-7xl mb-2">
+              Farhad Faraji
+            </h1>
+            <h1 className="text-3xl xl:text-4xl 2xl:text-5xl">
+              <span className="text-primary">Full-Stack</span> Developer
+            </h1>
+          </div>
+          <Button className="">Linkedin</Button>
+
+          <a
+            href="https://resume-farhadham.vercel.app/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-primary font-light text-xl lg:text-4xl text-center mt-4 lg:mt-8 cursor-pointer underline underline-offset-4"
+          >
+            Download CV
+          </a>
+        </motion.div>
+      )}
+    </AnimatePresence>
   );
 };
 

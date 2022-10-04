@@ -9,32 +9,41 @@ const FirstFloor = ({ nodes, materials, level }) => {
     <motion.group
       name="Room1"
       initial={{ x: 0, y: 1500, z: 0 }}
-      animate={level === 1 ? { x: 0, y: 177.5, z: 0 } : { x: 0, y: 1500, z: 0 }}
+      animate={level === 1 ? { x: 0, y: 0, z: 0 } : { x: 0, y: 1500, z: 0 }}
       transition={{
         type: "tween",
         duration: 1.5,
         ease: "easeInOut",
       }}
     >
-      <group name="resume" position={[-75, 39.27, -175]}>
-        <mesh
+      <group name="resume" position={[125, 216.77, 25]}>
+        <motion.mesh
           name="Rectangle 2"
           geometry={nodes["Rectangle 2"].geometry}
           material={materials["Rectangle 2 Material"]}
           castShadow
           receiveShadow
           position={[0, -0.27, 1]}
+          whileHover={{ z: 10 }}
+          onClick={() => {
+            Router.push("https://resume-farhadham.vercel.app/");
+          }}
+          transition={{
+            type: "spring",
+            damping: 20,
+            stiffness: 200,
+          }}
         />
         <mesh
-          name="Rectangle8"
-          geometry={nodes.Rectangle8.geometry}
+          name="Rectangle"
+          geometry={nodes.Rectangle.geometry}
           material={materials.pot}
           castShadow
           receiveShadow
           position={[0, 0, -2]}
         />
       </group>
-      <group name="carpet" position={[87.82, -154.45, 34]}>
+      <group name="carpet" position={[287.82, 23.05, 234]}>
         <mesh
           name="Ellipse 2"
           geometry={nodes["Ellipse 2"].geometry}
@@ -54,8 +63,8 @@ const FirstFloor = ({ nodes, materials, level }) => {
           rotation={[-Math.PI / 2, 0, 0]}
         />
       </group>
-      <group name="plant" position={[-122.37, -105.03, -143.73]}>
-        <mesh
+      <group name="plant" position={[77.63, 72.47, 56.27]}>
+        <motion.mesh
           name="plant1"
           geometry={nodes.plant1.geometry}
           material={materials.plant}
@@ -63,8 +72,14 @@ const FirstFloor = ({ nodes, materials, level }) => {
           receiveShadow
           position={[-5.54, -13.85, 10.56]}
           rotation={[-1.53, 0.07, 1.75]}
+          animate={{ rotateX: -1 }}
+          transition={{
+            repeat: Infinity,
+            repeatType: "reverse",
+            duration: 2,
+          }}
         />
-        <mesh
+        <motion.mesh
           name="plant2"
           geometry={nodes.plant2.geometry}
           material={materials.plant}
@@ -72,8 +87,15 @@ const FirstFloor = ({ nodes, materials, level }) => {
           receiveShadow
           position={[-2.01, -14.38, -3.72]}
           rotation={[-1.75, 0, -1.81]}
+          animate={{ rotateX: -2 }}
+          transition={{
+            repeat: Infinity,
+            repeatType: "reverse",
+            duration: 2,
+            delay: 0.5,
+          }}
         />
-        <mesh
+        <motion.mesh
           name="plant3"
           geometry={nodes.plant3.geometry}
           material={materials.plant}
@@ -81,8 +103,15 @@ const FirstFloor = ({ nodes, materials, level }) => {
           receiveShadow
           position={[7.08, -12.64, 5.57]}
           rotation={[-Math.PI / 2, 0.1, -Math.PI]}
+          animate={{ rotateY: 0.3 }}
+          transition={{
+            repeat: Infinity,
+            repeatType: "reverse",
+            duration: 2,
+            delay: 0.5,
+          }}
         />
-        <mesh
+        <motion.mesh
           name="plant4"
           geometry={nodes.plant4.geometry}
           material={materials.plant}
@@ -90,6 +119,13 @@ const FirstFloor = ({ nodes, materials, level }) => {
           receiveShadow
           position={[-7.68, -11.83, 5.57]}
           rotation={[-Math.PI / 2, -0.06, 0]}
+          animate={{ rotateY: -0.5 }}
+          transition={{
+            repeat: Infinity,
+            repeatType: "reverse",
+            duration: 2,
+            delay: 0.5,
+          }}
         />
         <mesh
           name="pot"
@@ -102,7 +138,7 @@ const FirstFloor = ({ nodes, materials, level }) => {
       </group>
       <group
         name="cv"
-        position={[131, -89.95, 22.83]}
+        position={[331, 87.55, 222.83]}
         rotation={[0, Math.PI / 4, 0]}
       >
         <mesh
@@ -135,7 +171,7 @@ const FirstFloor = ({ nodes, materials, level }) => {
       </group>
       <group
         name="controller"
-        position={[55.57, -91.03, 7.95]}
+        position={[255.57, 86.47, 207.95]}
         rotation={[0.09, 0, 0]}
         scale={1.66}
       >
@@ -170,8 +206,8 @@ const FirstFloor = ({ nodes, materials, level }) => {
           scale={0.62}
         />
         <mesh
-          name="Cube 27"
-          geometry={nodes["Cube 27"].geometry}
+          name="Cube 2"
+          geometry={nodes["Cube 2"].geometry}
           material={materials.piano_key_white}
           castShadow
           receiveShadow
@@ -180,8 +216,8 @@ const FirstFloor = ({ nodes, materials, level }) => {
           scale={0.62}
         />
         <mesh
-          name="Cube7"
-          geometry={nodes.Cube7.geometry}
+          name="Cube"
+          geometry={nodes.Cube.geometry}
           material={materials.piano_key_white}
           castShadow
           receiveShadow
@@ -189,7 +225,7 @@ const FirstFloor = ({ nodes, materials, level }) => {
           rotation={[-Math.PI / 2, 0, 0]}
         />
       </group>
-      <group name="tv" position={[83.06, -63.48, 177.1]}>
+      <group name="tv" position={[283.06, 114.02, 377.1]}>
         <mesh
           name="Triangle 3"
           geometry={nodes["Triangle 3"].geometry}
@@ -217,7 +253,7 @@ const FirstFloor = ({ nodes, materials, level }) => {
           position={[0, 6.06, -1.42]}
         />
       </group>
-      <group name="tv_table" position={[83, -131.7, 177.5]}>
+      <group name="tv_table" position={[283, 45.8, 377.5]}>
         <mesh
           name="Cylinder 4"
           geometry={nodes["Cylinder 4"].geometry}
@@ -246,17 +282,17 @@ const FirstFloor = ({ nodes, materials, level }) => {
           rotation={[0, 0, 0.26]}
         />
         <mesh
-          name="Cylinder1"
-          geometry={nodes.Cylinder1.geometry}
-          material={materials["Cylinder1 Material"]}
+          name="Cylinder"
+          geometry={nodes.Cylinder.geometry}
+          material={materials["Cylinder Material"]}
           castShadow
           receiveShadow
           position={[-65.32, -13.89, -9.5]}
           rotation={[0, 0, -0.26]}
         />
         <mesh
-          name="Rectangle9"
-          geometry={nodes.Rectangle9.geometry}
+          name="Rectangle1"
+          geometry={nodes.Rectangle1.geometry}
           material={materials.piano_chair_leg}
           castShadow
           receiveShadow
@@ -264,7 +300,7 @@ const FirstFloor = ({ nodes, materials, level }) => {
           rotation={[-Math.PI / 2, 0, 0]}
         />
       </group>
-      <group name="tabel" position={[76.5, -124.59, 13.3]}>
+      <group name="tabel" position={[276.5, 52.91, 213.3]}>
         <mesh
           name="leg_1 2"
           geometry={nodes["leg_1 2"].geometry}
@@ -307,26 +343,26 @@ const FirstFloor = ({ nodes, materials, level }) => {
           rotation={[-Math.PI / 2, 0, 0]}
         />
       </group>
-      <group name="piano_chair" position={[-110.07, -137.3, 84.52]}>
+      <group name="piano_chair" position={[89.93, 40.2, 284.52]}>
         <mesh
-          name="Cube8"
-          geometry={nodes.Cube8.geometry}
-          material={materials["Cube8 Material"]}
+          name="Cube1"
+          geometry={nodes.Cube1.geometry}
+          material={materials["Cube1 Material"]}
           castShadow
           receiveShadow
           position={[0, 14.32, 0]}
           rotation={[-Math.PI / 2, 0, 0]}
         />
         <mesh
-          name="Cylinder2"
-          geometry={nodes.Cylinder2.geometry}
+          name="Cylinder1"
+          geometry={nodes.Cylinder1.geometry}
           material={materials.piano_chair_leg}
           castShadow
           receiveShadow
           position={[-11.85, -3.32, -11.89]}
         />
       </group>
-      <group name="piano" position={[-144.75, -94.21, 153.21]}>
+      <group name="piano" position={[55.25, 83.29, 353.21]}>
         <mesh
           name="black_keys"
           geometry={nodes.black_keys.geometry}
@@ -392,8 +428,8 @@ const FirstFloor = ({ nodes, materials, level }) => {
             rotation={[-Math.PI / 2, 0, 0]}
           />
           <mesh
-            name="Cube 28"
-            geometry={nodes["Cube 28"].geometry}
+            name="Cube 21"
+            geometry={nodes["Cube 21"].geometry}
             material={materials.piano_body}
             castShadow
             receiveShadow
@@ -401,8 +437,8 @@ const FirstFloor = ({ nodes, materials, level }) => {
             rotation={[-Math.PI / 2, 0, 0]}
           />
           <mesh
-            name="Cube9"
-            geometry={nodes.Cube9.geometry}
+            name="Cube2"
+            geometry={nodes.Cube2.geometry}
             material={materials.piano_body}
             castShadow
             receiveShadow
@@ -430,8 +466,8 @@ const FirstFloor = ({ nodes, materials, level }) => {
             rotation={[-Math.PI / 2, 0, 0]}
           />
           <mesh
-            name="Cube 29"
-            geometry={nodes["Cube 29"].geometry}
+            name="Cube 22"
+            geometry={nodes["Cube 22"].geometry}
             material={materials.piano_body}
             castShadow
             receiveShadow
@@ -439,8 +475,8 @@ const FirstFloor = ({ nodes, materials, level }) => {
             rotation={[-Math.PI / 2, 0, 0]}
           />
           <mesh
-            name="Cube10"
-            geometry={nodes.Cube10.geometry}
+            name="Cube3"
+            geometry={nodes.Cube3.geometry}
             material={materials.piano_body}
             castShadow
             receiveShadow
@@ -449,7 +485,7 @@ const FirstFloor = ({ nodes, materials, level }) => {
           />
         </group>
       </group>
-      <group name="sofa" position={[107.72, -94.77, -126.56]}>
+      <group name="sofa" position={[307.72, 82.73, 73.44]}>
         <mesh
           name="Cube 42"
           geometry={nodes["Cube 42"].geometry}
@@ -468,15 +504,28 @@ const FirstFloor = ({ nodes, materials, level }) => {
           position={[0, -20.27, 0]}
         />
         <mesh
-          name="Cube 210"
-          geometry={nodes["Cube 210"].geometry}
+          name="Cube 23"
+          geometry={nodes["Cube 23"].geometry}
           material={materials.sofa}
           castShadow
           receiveShadow
           position={[0, -46.51, 0]}
         />
       </group>
-      <group name="linkedin" position={[101.41, 42.28, -124]} scale={0.1}>
+      <motion.group
+        name="linkedin"
+        position={[301.41, 222.18, 76]}
+        scale={0.1}
+        whileHover={{ z: 90 }}
+        onClick={() => {
+          Router.push("https://linkedin.com/in/farhadfaraji");
+        }}
+        transition={{
+          type: "spring",
+          damping: 20,
+          stiffness: 200,
+        }}
+      >
         <mesh
           name="Merged Geometry"
           geometry={nodes["Merged Geometry"].geometry}
@@ -485,23 +534,23 @@ const FirstFloor = ({ nodes, materials, level }) => {
           position={[-10.75, 3.5, -511]}
         />
         <mesh
-          name="Rectangle10"
-          geometry={nodes.Rectangle10.geometry}
-          material={materials["Rectangle10 Material"]}
+          name="Rectangle2"
+          geometry={nodes.Rectangle2.geometry}
+          material={materials["Rectangle2 Material"]}
           castShadow
           receiveShadow
           position={[-10.69, 0, -532.64]}
         />
-      </group>
+      </motion.group>
       <mesh
         name="wall_right"
         geometry={nodes.wall_right.geometry}
         material={materials.room1_floor}
         castShadow
         receiveShadow
-        position={[0, 2.5, -200]}
+        position={[200, 180, 0]}
       />
-      <group name="windows frame" position={[-175.5, 55.45, -41.52]}>
+      <group name="windows frame" position={[24.5, 232.95, 158.48]}>
         <mesh
           name="Rectangle 3"
           geometry={nodes["Rectangle 3"].geometry}
@@ -539,8 +588,8 @@ const FirstFloor = ({ nodes, materials, level }) => {
           rotation={[0, Math.PI / 2, 0]}
         />
         <mesh
-          name="Rectangle11"
-          geometry={nodes.Rectangle11.geometry}
+          name="Rectangle3"
+          geometry={nodes.Rectangle3.geometry}
           material={materials["table _brown"]}
           castShadow
           receiveShadow
@@ -554,12 +603,12 @@ const FirstFloor = ({ nodes, materials, level }) => {
         material={materials.room1_floor}
         castShadow
         receiveShadow
-        position={[-189, 2.5, 0]}
+        position={[11, 180, 200]}
       >
         <mesh
-          name="Cube11"
-          geometry={nodes.Cube11.geometry}
-          material={materials["Cube11 Material"]}
+          name="Cube4"
+          geometry={nodes.Cube4.geometry}
+          material={materials["Cube4 Material"]}
           visible={false}
           castShadow
           receiveShadow
@@ -583,7 +632,7 @@ const FirstFloor = ({ nodes, materials, level }) => {
         material={materials.room1_floor}
         castShadow
         receiveShadow
-        position={[0, -177.5, 0]}
+        position={[200, 0, 200]}
         rotation={[-Math.PI / 2, 0, 0]}
       />
     </motion.group>
