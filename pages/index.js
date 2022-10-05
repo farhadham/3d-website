@@ -2,6 +2,7 @@ import Web from "../components/web/Web";
 import { useState, useEffect } from "react";
 import { Html } from "@react-three/drei";
 import Router from "next/router";
+import Head from "next/head";
 
 import BarLoader from "react-spinners/BarLoader";
 
@@ -28,5 +29,22 @@ export default function Home() {
     setScreenWidth(window.innerWidth);
   }, []);
 
-  return !screenWidth ? null : screenWidth > 640 ? <Web /> : null;
+  return !screenWidth ? null : screenWidth > 640 ? (
+    <>
+      <Head>
+        <title>Farhad Faraji - Full-Stack Web Developer</title>
+        <meta
+          name="keywords"
+          content="HTML, CSS, JavaScript, React, Next.js, MongoDB, MERN, Expressjs , Nodejs"
+        ></meta>
+        <meta name="author" content="Farhad Faraji"></meta>
+        <meta
+          name="description"
+          content="Farhad Faraji personal website, Front-end and Back-end web developer"
+        ></meta>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
+      <Web />
+    </>
+  ) : null;
 }
