@@ -14,26 +14,33 @@ const About = ({ level }) => {
           transition={{ duration: 0.5, ease: "easeInOut" }}
         >
           <div className="mb-8 2xl:mb-10">
-            <p className="text-base xl:text-lg 2xl:text-xl mb-2 font-normal text-justify">
+            <p className="text-base xl:text-lg 2xl:text-xl mb font-normal text-justify">
               Hello! I`m Farhad Faraji.
             </p>
-            <p className="text-base xl:text-lg 2xl:text-xl mb-2 font-normal text-justify">
+            <p className="text-base xl:text-lg 2xl:text-xl mb font-normal text-justify">
               Full Stack Developer and Music Composer
             </p>
-            <p className="text-base xl:text-lg 2xl:text-xl mb-2 font-normal text-justify">
-              I love coding and creativity and I am always looking to learn new
-              skills!
+            <p className="text-base xl:text-lg 2xl:text-xl mb font-normal text-justify">
+              I love coding, creativity, and learning new skills!
             </p>
           </div>
           <div className="text-2xl">
             <p className="font-normal mb-2">
-              <span className="text-primary">Born</span> 1996
-            </p>
-            <p className="font-normal mb-2">
               <span className="text-primary">Residence</span> Iran / Turkey
             </p>
-            <a href="mailto:farhadham2@gmail.com" className="font-normal mb-2">
-              <span className="text-primary">Email</span> farhadham2@gmail.com
+            <a href="mailto:farhadham2@gmail.com" className="font-normal">
+              <p className="mb-2">
+                <span className="text-primary">Email</span> farhadham2@gmail.com
+              </p>
+            </a>
+            <a
+              href="https://github.com/farhadham"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <p className="font-normal ">
+                <span className="text-primary">GitHub</span> Link
+              </p>
             </a>
           </div>
         </motion.div>
