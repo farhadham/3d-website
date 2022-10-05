@@ -22,13 +22,20 @@ const Hero = ({ level }) => {
               <span className="text-primary">Full-Stack</span> Developer
             </h1>
           </div>
-          <Button className="">Linkedin</Button>
+          <Button
+            className=""
+            onClick={() => {
+              window.open("https://linkedin.com/in/farhadfaraji", "_blank");
+            }}
+          >
+            Linkedin
+          </Button>
 
           <a
             href="https://resume-farhadham.vercel.app/"
             target="_blank"
             rel="noopener noreferrer"
-            className="text-primary font-light text-xl lg:text-4xl text-center mt-4 lg:mt-8 cursor-pointer underline underline-offset-4"
+            className="text-primary font-light text-xl lg:text-4xl text-center mt-4 lg:mt-8 cursor-pointer"
           >
             Download CV
           </a>
