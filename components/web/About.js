@@ -25,12 +25,14 @@ const About = ({ level }) => {
             </p>
           </div>
           <div className="text-2xl">
-            <p className="font-normal mb-2">
-              <span className="text-primary">Residence</span> Iran / Turkey
+            <p className="font-light mb-2">
+              <span className="text-primary font-normal">Residence</span> Iran /
+              Turkey
             </p>
             <a href="mailto:farhadham2@gmail.com" className="font-normal">
-              <p className="mb-2">
-                <span className="text-primary">Email</span> farhadham2@gmail.com
+              <p className="mb-2 font-light">
+                <span className="text-primary font-normal">Email</span>{" "}
+                farhadham2@gmail.com
               </p>
             </a>
             <a
@@ -38,8 +40,8 @@ const About = ({ level }) => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <p className="font-normal ">
-                <span className="text-primary">GitHub</span> Link
+              <p className="font-light ">
+                <span className="text-primary font-normal">GitHub</span> Link
               </p>
             </a>
           </div>
