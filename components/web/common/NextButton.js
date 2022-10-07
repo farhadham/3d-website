@@ -16,7 +16,7 @@ const NextButton = ({ setLevel, level }) => {
           });
         }}
       >
-        -
+        ⇩
       </div>
       <div className="w-40 text-center border-x border-stone-400 border-solid py-5">
         {level === 1 ? "Home" : "About"}
@@ -33,7 +33,7 @@ const NextButton = ({ setLevel, level }) => {
           });
         }}
       >
-        +
+        ⇧
       </div>
     </div>
   );

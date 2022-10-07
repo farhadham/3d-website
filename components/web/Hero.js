@@ -1,13 +1,23 @@
-import React from "react";
+import React, { useContext } from "react";
 import Button from "./common/Button";
 import { motion, AnimatePresence } from "framer-motion";
+import { Global } from "./Web";
 
 const Hero = ({ level }) => {
+  const value = useContext(Global);
+
+  const handleLinkedinEnter = (e) => {
+    value.setLinkedinHover(true);
+  };
+  const handleLinkedinLeaver = (e) => {
+    value.setLinkedinHover(false);
+  };
+
   return (
     <AnimatePresence>
       {level === 1 && (
         <motion.div
-          className="text-white text-6xl font-bold flex flex-col justify-center items-center h-full mx-6 absolute z-20"
+          className="text-white text-6xl font-bold flex flex-col justify-center h-full mx-6 absolute z-20"
           initial={{ opacity: 0, x: -400 }}
           animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: -400 }}
@@ -22,23 +32,24 @@ const Hero = ({ level }) => {
               <span className="text-primary">Full-Stack</span> Developer
             </h1>
           </div>
-          <Button
-            className=""
-            onClick={() => {
-              window.open("https://linkedin.com/in/farhadfaraji", "_blank");
-            }}
-          >
-            Linkedin
-          </Button>
-
-          <a
-            href="https://resume-farhadham.vercel.app/"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-primary font-light text-xl lg:text-4xl text-center mt-4 lg:mt-8 cursor-pointer"
-          >
-            Download CV
-          </a>
+          <div className="flex justify-center gap-4">
+            <Button
+              onClick={() => {
+                window.open("https://linkedin.com/in/farhadfaraji", "_blank");
+              }}
+              onMouseEnter={handleLinkedinEnter}
+              onMouseLeave={handleLinkedinLeaver}
+            >
+              Linkedin
+            </Button>
+            <Button
+              onClick={() => {
+                window.open("https://resume-farhadham.vercel.app/", "_blank");
+              }}
+            >
+              Download CV
+            </Button>
+          </div>
         </motion.div>
       )}
     </AnimatePresence>
