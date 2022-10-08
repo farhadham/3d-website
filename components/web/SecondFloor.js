@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useEffect, useContext } from "react";
 import { motion } from "framer-motion-3d";
 import { useSpring, useTransform } from "framer-motion";
 import Router from "next/router";
@@ -26,7 +26,9 @@ const SecondFloor = ({ nodes, materials, level }) => {
       name="Room2"
       initial={{ x: 0, y: 1500, z: 0 }}
       animate={
-        level === 2 ? { x: 100, y: 177.5, z: 100 } : { x: 0, y: 1500, z: 0 }
+        [2, 3, 4].includes(level)
+          ? { x: 100, y: 177.5, z: 100 }
+          : { x: 0, y: 1500, z: 0 }
       }
       transition={{
         type: "tween",
@@ -34,8 +36,361 @@ const SecondFloor = ({ nodes, materials, level }) => {
         ease: "easeInOut",
       }}
     >
+      <motion.group
+        name="meta"
+        position={[58, 16.29, -176.56]}
+        animate={{
+          z: value.metaHover ? -150 : -176.56,
+        }}
+        transition={{
+          type: "spring",
+          damping: 20,
+          stiffness: 200,
+        }}
+      >
+        <mesh
+          name="meta_frame_4"
+          geometry={nodes.meta_frame_4.geometry}
+          material={materials["table _brown"]}
+          castShadow
+          receiveShadow
+          position={[17.97, -0.12, -0.75]}
+          rotation={[0, 0, Math.PI / 2]}
+        />
+        <mesh
+          name="meta_frame_3"
+          geometry={nodes.meta_frame_3.geometry}
+          material={materials["table _brown"]}
+          castShadow
+          receiveShadow
+          position={[-18, -0.12, -0.75]}
+          rotation={[0, 0, Math.PI / 2]}
+        />
+        <mesh
+          name="meta_frame_2"
+          geometry={nodes.meta_frame_2.geometry}
+          material={materials["table _brown"]}
+          castShadow
+          receiveShadow
+          position={[0, -15.11, -0.75]}
+        />
+        <mesh
+          name="meta_frame_1"
+          geometry={nodes.meta_frame_1.geometry}
+          material={materials["table _brown"]}
+          castShadow
+          receiveShadow
+          position={[0, 15.13, -0.75]}
+        />
+        <mesh
+          name="meta_paper"
+          geometry={nodes.meta_paper.geometry}
+          material={materials["meta_paper Material"]}
+          castShadow
+          receiveShadow
+          position={[0, 0.13, -0.44]}
+        />
+      </motion.group>
+      <motion.group
+        name="google"
+        position={[58, 54.06, -176.56]}
+        animate={{
+          z: value.googleHover ? -150 : -176.56,
+        }}
+        transition={{
+          type: "spring",
+          damping: 20,
+          stiffness: 200,
+        }}
+      >
+        <mesh
+          name="google_frame_4"
+          geometry={nodes.google_frame_4.geometry}
+          material={materials["table _brown"]}
+          castShadow
+          receiveShadow
+          position={[17.97, -0.12, -0.75]}
+          rotation={[0, 0, Math.PI / 2]}
+        />
+        <mesh
+          name="google_frame_3"
+          geometry={nodes.google_frame_3.geometry}
+          material={materials["table _brown"]}
+          castShadow
+          receiveShadow
+          position={[-18, -0.12, -0.75]}
+          rotation={[0, 0, Math.PI / 2]}
+        />
+        <mesh
+          name="google_frame_2"
+          geometry={nodes.google_frame_2.geometry}
+          material={materials["table _brown"]}
+          castShadow
+          receiveShadow
+          position={[0, -15.11, -0.75]}
+        />
+        <mesh
+          name="google_frame_1"
+          geometry={nodes.google_frame_1.geometry}
+          material={materials["table _brown"]}
+          castShadow
+          receiveShadow
+          position={[0, 15.13, -0.75]}
+        />
+        <mesh
+          name="google_paper"
+          geometry={nodes.google_paper.geometry}
+          material={materials["google_paper Material"]}
+          castShadow
+          receiveShadow
+          position={[0, 0.13, -0.44]}
+        />
+      </motion.group>
+      <motion.group
+        name="cs50"
+        position={[58, 92.09, -176.56]}
+        animate={{
+          z: value.csHover ? -150 : -176.56,
+        }}
+        transition={{
+          type: "spring",
+          damping: 20,
+          stiffness: 200,
+        }}
+      >
+        <mesh
+          name="cs50_frame_4"
+          geometry={nodes.cs50_frame_4.geometry}
+          material={materials["table _brown"]}
+          castShadow
+          receiveShadow
+          position={[17.97, -0.12, -0.75]}
+          rotation={[0, 0, Math.PI / 2]}
+        />
+        <mesh
+          name="cs50_frame_3"
+          geometry={nodes.cs50_frame_3.geometry}
+          material={materials["table _brown"]}
+          castShadow
+          receiveShadow
+          position={[-18, -0.12, -0.75]}
+          rotation={[0, 0, Math.PI / 2]}
+        />
+        <mesh
+          name="cs50_frame_2"
+          geometry={nodes.cs50_frame_2.geometry}
+          material={materials["table _brown"]}
+          castShadow
+          receiveShadow
+          position={[0, -15.11, -0.75]}
+        />
+        <mesh
+          name="cs50_frame_1"
+          geometry={nodes.cs50_frame_1.geometry}
+          material={materials["table _brown"]}
+          castShadow
+          receiveShadow
+          position={[0, 15.13, -0.75]}
+        />
+        <mesh
+          name="cs50_paper"
+          geometry={nodes.cs50_paper.geometry}
+          material={materials["cs50_paper Material"]}
+          castShadow
+          receiveShadow
+          position={[0, 0.13, -0.44]}
+        />
+      </motion.group>
+      <group name="mouse_1_g" position={[-24.96, -71.5, -135.24]}>
+        <mesh
+          name="mouse_1"
+          geometry={nodes.mouse_1.geometry}
+          material={materials.safe_grey}
+          castShadow
+          receiveShadow
+          position={[-0.31, 0.13, 0.74]}
+          rotation={[-Math.PI / 2, 0, -Math.PI / 2]}
+        />
+        <mesh
+          name="mousepad_1"
+          geometry={nodes.mousepad_1.geometry}
+          material={materials.road}
+          castShadow
+          receiveShadow
+          position={[0, -1.63, 0]}
+          rotation={[-Math.PI / 2, 0, 0]}
+        />
+      </group>
+      <group name="keyboard_1" position={[9.01, -72.54, -133.7]}>
+        <mesh
+          name="keyboard_1_key"
+          geometry={nodes.keyboard_1_key.geometry}
+          material={materials.safe_grey}
+          castShadow
+          receiveShadow
+          position={[-15.37, 0.46, -3.77]}
+          rotation={[-Math.PI / 2, 0, 0]}
+        />
+        <mesh
+          name="keyboard_1_body"
+          geometry={nodes.keyboard_1_body.geometry}
+          material={materials.piano_body}
+          castShadow
+          receiveShadow
+          position={[0, -0.71, 0]}
+          rotation={[-Math.PI / 2, 0, 0]}
+        />
+      </group>
+      <group name="monitor_1" position={[6.49, -57.17, -163.83]}>
+        <mesh
+          name="monitor_1_screen"
+          geometry={nodes.monitor_1_screen.geometry}
+          material={materials.piano_body}
+          castShadow
+          receiveShadow
+          position={[0, -9.09, 0.23]}
+          rotation={[-Math.PI / 2, 0, 0]}
+        />
+        <mesh
+          name="monitor_1_leg_3"
+          geometry={nodes.monitor_1_leg_3.geometry}
+          material={materials.piano_body}
+          castShadow
+          receiveShadow
+          position={[0.03, -10.38, -2.02]}
+          rotation={[-1.22, 0, 0]}
+        />
+        <mesh
+          name="monitor_1_leg_2"
+          geometry={nodes.monitor_1_leg_2.geometry}
+          material={materials.piano_body}
+          castShadow
+          receiveShadow
+          position={[-4.16, -15.79, -0.13]}
+          rotation={[-Math.PI / 2, 0, Math.PI / 4]}
+        />
+        <mesh
+          name="monitor_1_leg_1"
+          geometry={nodes.monitor_1_leg_1.geometry}
+          material={materials.piano_body}
+          castShadow
+          receiveShadow
+          position={[3.82, -15.91, 0.13]}
+          rotation={[-Math.PI / 2, 0, -Math.PI / 4]}
+        />
+      </group>
+      <group name="chair_1" position={[12.32, -113.29, -72.65]} scale={1.23}>
+        <mesh
+          name="chair_one_connector"
+          geometry={nodes.chair_one_connector.geometry}
+          material={materials.safe_grey}
+          castShadow
+          receiveShadow
+          position={[0.46, 8.77, 15.29]}
+          rotation={[-0.79, -0.01, 3.13]}
+        />
+        <mesh
+          name="chair_1_back"
+          geometry={nodes.chair_1_back.geometry}
+          material={materials.lock_yellow}
+          castShadow
+          receiveShadow
+          position={[0.46, 28.73, 21.48]}
+          rotation={[-Math.PI, 0.02, -Math.PI]}
+        />
+        <mesh
+          name="chair_1_seat"
+          geometry={nodes.chair_1_seat.geometry}
+          material={materials.lock_yellow}
+          castShadow
+          receiveShadow
+          position={[0.69, 0.46, -1.69]}
+          rotation={[-Math.PI / 2, 0, 3.12]}
+        />
+        <mesh
+          name="chair_1_col"
+          geometry={nodes.chair_1_col.geometry}
+          material={materials.safe_grey}
+          castShadow
+          receiveShadow
+          position={[0.42, -11.46, -1.53]}
+          rotation={[Math.PI, 0.02, Math.PI]}
+        />
+        <group
+          name="chair_1_leg_g"
+          position={[0, -28.04, -1.42]}
+          rotation={[-0.17, 0, 0]}
+        >
+          <mesh
+            name="chair_1_leg_4"
+            geometry={nodes.chair_1_leg_4.geometry}
+            material={materials.safe_grey}
+            castShadow
+            receiveShadow
+            position={[0.38, -0.08, 10.58]}
+            rotation={[2.01, 0.01, -3.13]}
+          />
+          <mesh
+            name="chair_1_leg_3"
+            geometry={nodes.chair_1_leg_3.geometry}
+            material={materials.safe_grey}
+            castShadow
+            receiveShadow
+            position={[10.13, 0, -0.3]}
+            rotation={[2.01, -0.43, -1.47]}
+          />
+          <mesh
+            name="chair_1_leg_2"
+            geometry={nodes.chair_1_leg_2.geometry}
+            material={materials.safe_grey}
+            castShadow
+            receiveShadow
+            position={[0.62, 2.66, -9.97]}
+            rotation={[1.4, 0, -3.12]}
+          />
+          <mesh
+            name="chair_1_leg_1"
+            geometry={nodes.chair_1_leg_1.geometry}
+            material={materials.safe_grey}
+            castShadow
+            receiveShadow
+            position={[-9.73, 2.01, -0.41]}
+            rotation={[2, 0.27, 1.59]}
+          />
+        </group>
+      </group>
+      <group name="mug_1_g" position={[-33.22, -62.44, -159.01]}>
+        <mesh
+          name="mug_cyl_1"
+          geometry={nodes.mug_cyl_1.geometry}
+          material={materials.pot}
+          castShadow
+          receiveShadow
+          position={[-3.83, 2.87, 0.6]}
+          rotation={[0.22, -0.21, 0.23]}
+        />
+        <mesh
+          name="mug_1"
+          geometry={nodes.mug_1.geometry}
+          material={materials.plant}
+          castShadow
+          receiveShadow
+          position={[0.22, -4.75, 0]}
+        />
+      </group>
       <group name="hand_1" position={[54.59, -46.78, -102.54]}>
-        <group name="hand_forearm_g" position={[0, -22.57, -17.87]}>
+        <motion.group
+          name="hand_forearm_g"
+          position={[0, -22.57, -17.87]}
+          animate={{
+            rotateY: value.atomHover ? 2 * Math.PI : 0,
+          }}
+          transition={{
+            type: "spring",
+            damping: 20,
+            stiffness: 100,
+          }}
+        >
           <group
             name="hand_palm_g"
             position={[0, 45.85, 25.96]}
@@ -147,7 +502,7 @@ const SecondFloor = ({ nodes, materials, level }) => {
             position={[0.04, 13.18, 2.51]}
             rotation={[-1.37, 0, 0]}
           />
-        </group>
+        </motion.group>
         <mesh
           name="hand_1_base"
           geometry={nodes.hand_1_base.geometry}
@@ -311,7 +666,20 @@ const SecondFloor = ({ nodes, materials, level }) => {
         />
       </group>
       <group name="safe_1" position={[-151.5, 47.6, 111.21]}>
-        <group name="safe_1_door_g" position={[17.8, -0.12, 0]}>
+        <motion.group
+          name="safe_1_door_g"
+          position={[17.8, -0.12, 0]}
+          animate={{
+            rotateY: value.sorexHover ? Math.PI / 4 : 0,
+            z: value.sorexHover ? -15 : 0,
+            x: value.sorexHover ? 25 : 17.8,
+          }}
+          transition={{
+            type: "spring",
+            damping: 20,
+            stiffness: 200,
+          }}
+        >
           <mesh
             name="safe_1_door"
             geometry={nodes.safe_1_door.geometry}
@@ -411,7 +779,7 @@ const SecondFloor = ({ nodes, materials, level }) => {
             position={[0.7, -0.92, 12.7]}
             rotation={[0, Math.PI / 2, 0]}
           />
-        </group>
+        </motion.group>
         <mesh
           name="safe-1_cube"
           geometry={nodes["safe-1_cube"].geometry}
@@ -431,7 +799,18 @@ const SecondFloor = ({ nodes, materials, level }) => {
         position={[45.09, -154.38, -13.03]}
         rotation={[-Math.PI / 2, 0, 3.13]}
       />
-      <group name="security_1" position={[94.79, 16.25, -175.18]}>
+      <motion.group
+        name="security_1"
+        position={[144.79, 26.25, -175.18]}
+        animate={{
+          z: value.securityHover ? -150 : -175.18,
+        }}
+        transition={{
+          type: "spring",
+          damping: 20,
+          stiffness: 200,
+        }}
+      >
         <mesh
           name="security_1_rect_10"
           geometry={nodes.security_1_rect_10.geometry}
@@ -520,7 +899,7 @@ const SecondFloor = ({ nodes, materials, level }) => {
           receiveShadow
           position={[0, 0, -0.89]}
         />
-      </group>
+      </motion.group>
       <mesh
         name="wall_shelf_1"
         geometry={nodes.wall_shelf_1.geometry}
@@ -530,7 +909,7 @@ const SecondFloor = ({ nodes, materials, level }) => {
         position={[-155.82, 26.44, 113.11]}
         rotation={[0, Math.PI / 2, 0]}
       />
-      <group
+      <motion.group
         name="closet_1"
         position={[-111.22, -58.17, -45.49]}
         rotation={[0, Math.PI / 2, 0]}
@@ -938,7 +1317,7 @@ const SecondFloor = ({ nodes, materials, level }) => {
           rotation={[-Math.PI / 2, 0, Math.PI / 2]}
         />
 
-        <mesh
+        <motion.mesh
           name="closet_cube_10"
           geometry={nodes.closet_cube_10.geometry}
           material={materials[" closet_1"]}
@@ -946,8 +1325,18 @@ const SecondFloor = ({ nodes, materials, level }) => {
           receiveShadow
           rotation={[-Math.PI / 2, 0, -Math.PI / 2]}
           position={[27.9, 3.88, 1.49]}
+          animate={{
+            rotateZ: value.karlaHover ? 0 : -Math.PI / 2,
+            z: value.karlaHover ? 22 : 1.49,
+            x: value.karlaHover ? 50 : 27.9,
+          }}
+          transition={{
+            type: "spring",
+            damping: 20,
+            stiffness: 200,
+          }}
         />
-        <mesh
+        <motion.mesh
           name="closet_cube_9"
           geometry={nodes.closet_cube_9.geometry}
           material={materials[" closet_1"]}
@@ -955,6 +1344,16 @@ const SecondFloor = ({ nodes, materials, level }) => {
           receiveShadow
           rotation={[-Math.PI / 2, 0, -Math.PI / 2]}
           position={[-24.08, 3.76, 1.29]}
+          animate={{
+            rotateZ: value.karlaHover ? -Math.PI : -Math.PI / 2,
+            z: value.karlaHover ? 22 : 1.29,
+            x: value.karlaHover ? -47 : -24.08,
+          }}
+          transition={{
+            type: "spring",
+            damping: 20,
+            stiffness: 200,
+          }}
         />
 
         <mesh
@@ -975,7 +1374,7 @@ const SecondFloor = ({ nodes, materials, level }) => {
           position={[-46.68, -0.01, -30.21]}
           rotation={[-Math.PI / 2, 0, 0]}
         />
-      </group>
+      </motion.group>
       <motion.group
         name="robot"
         position={[robotX, -127.38, 95.5]}
@@ -1225,8 +1624,8 @@ const SecondFloor = ({ nodes, materials, level }) => {
           rotation={[-Math.PI / 2, 0, 0]}
         />
       </motion.group>
-      <group name="plant_2" position={[154.59, -105.03, 148.78]}>
-        <mesh
+      <group name="plant_2" position={[154.59, -105.03, -140.78]}>
+        <motion.mesh
           name="plant_2_4"
           geometry={nodes.plant_2_4.geometry}
           material={materials.plant}
@@ -1234,8 +1633,14 @@ const SecondFloor = ({ nodes, materials, level }) => {
           receiveShadow
           position={[-5.54, -13.85, 10.56]}
           rotation={[-1.53, 0.07, 1.75]}
+          animate={{ rotateX: -1 }}
+          transition={{
+            repeat: Infinity,
+            repeatType: "reverse",
+            duration: 2,
+          }}
         />
-        <mesh
+        <motion.mesh
           name="plant_2_3"
           geometry={nodes.plant_2_3.geometry}
           material={materials.plant}
@@ -1243,8 +1648,15 @@ const SecondFloor = ({ nodes, materials, level }) => {
           receiveShadow
           position={[-2.01, -14.38, -3.72]}
           rotation={[-1.75, 0, -1.81]}
+          animate={{ rotateX: -2 }}
+          transition={{
+            repeat: Infinity,
+            repeatType: "reverse",
+            duration: 2,
+            delay: 0.5,
+          }}
         />
-        <mesh
+        <motion.mesh
           name="plant_2_2"
           geometry={nodes.plant_2_2.geometry}
           material={materials.plant}
@@ -1252,8 +1664,15 @@ const SecondFloor = ({ nodes, materials, level }) => {
           receiveShadow
           position={[7.08, -12.64, 5.57]}
           rotation={[-Math.PI / 2, 0.1, -Math.PI]}
+          animate={{ rotateY: 0.3 }}
+          transition={{
+            repeat: Infinity,
+            repeatType: "reverse",
+            duration: 2,
+            delay: 0.5,
+          }}
         />
-        <mesh
+        <motion.mesh
           name="plant_2_1"
           geometry={nodes.plant_2_1.geometry}
           material={materials.plant}
@@ -1261,6 +1680,13 @@ const SecondFloor = ({ nodes, materials, level }) => {
           receiveShadow
           position={[-7.68, -11.83, 5.57]}
           rotation={[-Math.PI / 2, -0.06, 0]}
+          animate={{ rotateY: -0.5 }}
+          transition={{
+            repeat: Infinity,
+            repeatType: "reverse",
+            duration: 2,
+            delay: 0.5,
+          }}
         />
         <mesh
           name="pot_2"

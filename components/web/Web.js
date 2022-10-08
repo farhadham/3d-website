@@ -5,6 +5,7 @@ import Scene from "./Scene";
 import BarLoader from "react-spinners/BarLoader";
 import Hero from "./Hero";
 import NextButton from "./common/NextButton";
+import Portfolio from "./Portfolio";
 import About from "./About";
 
 export const Global = createContext();
@@ -26,14 +27,41 @@ const Web = () => {
   const [level, setLevel] = useState(1);
   const [linkedinHover, setLinkedinHover] = useState(false);
   const [resumeHover, setResumeHover] = useState(false);
+  const [karlaHover, setKarlaHover] = useState(false);
+  const [sorexHover, setSorexHover] = useState(false);
+  const [securityHover, setSecurityHover] = useState(false);
+  const [atomHover, setAtomHover] = useState(false);
+  const [csHover, setCsHover] = useState(false);
+  const [googleHover, setGoogleHover] = useState(false);
+  const [metaHover, setMetaHover] = useState(false);
 
   return (
     <Global.Provider
-      value={{ linkedinHover, setLinkedinHover, resumeHover, setResumeHover }}
+      value={{
+        linkedinHover,
+        setLinkedinHover,
+        resumeHover,
+        setResumeHover,
+        karlaHover,
+        setKarlaHover,
+        sorexHover,
+        setSorexHover,
+        securityHover,
+        setSecurityHover,
+        atomHover,
+        setAtomHover,
+        csHover,
+        setCsHover,
+        googleHover,
+        setGoogleHover,
+        metaHover,
+        setMetaHover,
+      }}
     >
       <main className="h-screen mx-auto flex flex-col lg:flex-row">
         <div className="h-3/6 lg:h-full  flex flex-col justify-center items-center lg:w-4/12 relative">
           <Hero level={level} />
+          <Portfolio level={level} />
           <About level={level} />
           <NextButton setLevel={setLevel} level={level} />
         </div>

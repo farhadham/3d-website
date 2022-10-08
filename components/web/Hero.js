@@ -9,14 +9,14 @@ const Hero = ({ level }) => {
   const handleLinkedinEnter = (e) => {
     value.setLinkedinHover(true);
   };
-  const handleLinkedinLeaver = (e) => {
+  const handleLinkedinLeave = (e) => {
     value.setLinkedinHover(false);
   };
 
   const handleResumeEnter = (e) => {
     value.setResumeHover(true);
   };
-  const handleResumeLeaver = (e) => {
+  const handleResumeLeave = (e) => {
     value.setResumeHover(false);
   };
 
@@ -45,7 +45,7 @@ const Hero = ({ level }) => {
                 window.open("https://linkedin.com/in/farhadfaraji", "_blank");
               }}
               onMouseEnter={handleLinkedinEnter}
-              onMouseLeave={handleLinkedinLeaver}
+              onMouseLeave={handleLinkedinLeave}
             >
               Linkedin
             </Button>
@@ -54,7 +54,7 @@ const Hero = ({ level }) => {
                 window.open("https://resume-farhadham.vercel.app/", "_blank");
               }}
               onMouseEnter={handleResumeEnter}
-              onMouseLeave={handleResumeLeaver}
+              onMouseLeave={handleResumeLeave}
             >
               Download CV
             </Button>

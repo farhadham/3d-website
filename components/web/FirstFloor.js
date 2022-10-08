@@ -1,6 +1,5 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useContext } from "react";
 import { motion } from "framer-motion-3d";
-import Router from "next/router";
 import { Global } from "./Web";
 
 const FirstFloor = ({ nodes, materials, level }) => {
@@ -19,7 +18,7 @@ const FirstFloor = ({ nodes, materials, level }) => {
         ease: "easeInOut",
       }}
     >
-      <mesh
+      <motion.mesh
         name="ball_1"
         geometry={nodes.ball_1.geometry}
         material={materials.arrow}
@@ -27,6 +26,13 @@ const FirstFloor = ({ nodes, materials, level }) => {
         receiveShadow
         position={[5.94, -84.5, 17]}
         rotation={[-Math.PI / 2, 0, 0]}
+        animate={{ y: 10 }}
+        transition={{
+          duration: 0.5,
+          repeat: Infinity,
+          repeatType: "reverse",
+          ease: "easeOut",
+        }}
       />
       <group name="resume" position={[-75, 39.27, -175]}>
         <motion.mesh
@@ -73,7 +79,7 @@ const FirstFloor = ({ nodes, materials, level }) => {
         />
       </group>
       <group name="plant_1" position={[-122.37, -105.03, -143.73]}>
-        <mesh
+        <motion.mesh
           name="plant_1_4"
           geometry={nodes.plant_1_4.geometry}
           material={materials.plant}
@@ -81,8 +87,14 @@ const FirstFloor = ({ nodes, materials, level }) => {
           receiveShadow
           position={[-5.54, -13.85, 10.56]}
           rotation={[-1.53, 0.07, 1.75]}
+          animate={{ rotateX: -1 }}
+          transition={{
+            repeat: Infinity,
+            repeatType: "reverse",
+            duration: 2,
+          }}
         />
-        <mesh
+        <motion.mesh
           name="plant_1_3"
           geometry={nodes.plant_1_3.geometry}
           material={materials.plant}
@@ -90,8 +102,15 @@ const FirstFloor = ({ nodes, materials, level }) => {
           receiveShadow
           position={[-2.01, -14.38, -3.72]}
           rotation={[-1.75, 0, -1.81]}
+          animate={{ rotateX: -2 }}
+          transition={{
+            repeat: Infinity,
+            repeatType: "reverse",
+            duration: 2,
+            delay: 0.5,
+          }}
         />
-        <mesh
+        <motion.mesh
           name="plant_1_2"
           geometry={nodes.plant_1_2.geometry}
           material={materials.plant}
@@ -99,8 +118,15 @@ const FirstFloor = ({ nodes, materials, level }) => {
           receiveShadow
           position={[7.08, -12.64, 5.57]}
           rotation={[-Math.PI / 2, 0.1, -Math.PI]}
+          animate={{ rotateY: 0.3 }}
+          transition={{
+            repeat: Infinity,
+            repeatType: "reverse",
+            duration: 2,
+            delay: 0.5,
+          }}
         />
-        <mesh
+        <motion.mesh
           name="plant_1_1"
           geometry={nodes.plant_1_1.geometry}
           material={materials.plant}
@@ -108,6 +134,13 @@ const FirstFloor = ({ nodes, materials, level }) => {
           receiveShadow
           position={[-7.68, -11.83, 5.57]}
           rotation={[-Math.PI / 2, -0.06, 0]}
+          animate={{ rotateY: -0.5 }}
+          transition={{
+            repeat: Infinity,
+            repeatType: "reverse",
+            duration: 2,
+            delay: 0.5,
+          }}
         />
         <mesh
           name="pot_1"

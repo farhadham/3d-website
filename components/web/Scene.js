@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from "react";
+import React from "react";
 import useSpline from "@splinetool/r3f-spline";
 import { OrthographicCamera } from "@react-three/drei";
 import { PresentationControls } from "@react-three/drei";
@@ -18,8 +18,6 @@ const Scene = ({ level }) => {
   const { nodes, materials } = useSpline(
     "https://prod.spline.design/bXEEf3I1GJp1oEhU/scene.splinecode"
   );
-
-  console.log(nodes);
 
   return (
     <>

@@ -19,13 +19,13 @@ const NextButton = ({ setLevel, level }) => {
         ⇩
       </div>
       <div className="w-40 text-center border-x border-stone-400 border-solid py-5">
-        {level === 1 ? "Home" : "About"}
+        {level === 1 ? "Home" : level === 2 ? "Portfolio" : "About"}
       </div>
       <div
         className="w-16 text-center px-4 text-3xl"
         onClick={() => {
           setLevel((state) => {
-            if (state < 2) {
+            if (state < 3) {
               return state + 1;
             } else {
               return state;

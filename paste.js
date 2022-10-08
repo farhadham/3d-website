@@ -13,12 +13,325 @@ export default function Scene({ ...props }) {
     <>
       <color attach="background" args={["#464646"]} />
       <group {...props} dispose={null}>
-        <group name="Room2" position={[101, 277.38, 100]}>
+        <group name="Room2" position={[101, 255.38, 100]}>
+          <group name="meta" position={[58, 16.29, -176.56]}>
+            <mesh
+              name="meta_frame_4"
+              geometry={nodes.meta_frame_4.geometry}
+              material={materials["table _brown"]}
+              castShadow
+              receiveShadow
+              position={[17.97, -0.12, -0.75]}
+              rotation={[0, 0, Math.PI / 2]}
+            />
+            <mesh
+              name="meta_frame_3"
+              geometry={nodes.meta_frame_3.geometry}
+              material={materials["table _brown"]}
+              castShadow
+              receiveShadow
+              position={[-18, -0.12, -0.75]}
+              rotation={[0, 0, Math.PI / 2]}
+            />
+            <mesh
+              name="meta_frame_2"
+              geometry={nodes.meta_frame_2.geometry}
+              material={materials["table _brown"]}
+              castShadow
+              receiveShadow
+              position={[0, -15.11, -0.75]}
+            />
+            <mesh
+              name="meta_frame_1"
+              geometry={nodes.meta_frame_1.geometry}
+              material={materials["table _brown"]}
+              castShadow
+              receiveShadow
+              position={[0, 15.13, -0.75]}
+            />
+            <mesh
+              name="meta_paper"
+              geometry={nodes.meta_paper.geometry}
+              material={materials["meta_paper Material"]}
+              castShadow
+              receiveShadow
+              position={[0, 0.13, -0.44]}
+            />
+          </group>
+          <group name="google" position={[58, 54.06, -176.56]}>
+            <mesh
+              name="google_frame_4"
+              geometry={nodes.google_frame_4.geometry}
+              material={materials["table _brown"]}
+              castShadow
+              receiveShadow
+              position={[17.97, -0.12, -0.75]}
+              rotation={[0, 0, Math.PI / 2]}
+            />
+            <mesh
+              name="google_frame_3"
+              geometry={nodes.google_frame_3.geometry}
+              material={materials["table _brown"]}
+              castShadow
+              receiveShadow
+              position={[-18, -0.12, -0.75]}
+              rotation={[0, 0, Math.PI / 2]}
+            />
+            <mesh
+              name="google_frame_2"
+              geometry={nodes.google_frame_2.geometry}
+              material={materials["table _brown"]}
+              castShadow
+              receiveShadow
+              position={[0, -15.11, -0.75]}
+            />
+            <mesh
+              name="google_frame_1"
+              geometry={nodes.google_frame_1.geometry}
+              material={materials["table _brown"]}
+              castShadow
+              receiveShadow
+              position={[0, 15.13, -0.75]}
+            />
+            <mesh
+              name="google_paper"
+              geometry={nodes.google_paper.geometry}
+              material={materials["google_paper Material"]}
+              castShadow
+              receiveShadow
+              position={[0, 0.13, -0.44]}
+            />
+          </group>
+          <group name="cs50" position={[58, 92.09, -176.56]}>
+            <mesh
+              name="cs50_frame_4"
+              geometry={nodes.cs50_frame_4.geometry}
+              material={materials["table _brown"]}
+              castShadow
+              receiveShadow
+              position={[17.97, -0.12, -0.75]}
+              rotation={[0, 0, Math.PI / 2]}
+            />
+            <mesh
+              name="cs50_frame_3"
+              geometry={nodes.cs50_frame_3.geometry}
+              material={materials["table _brown"]}
+              castShadow
+              receiveShadow
+              position={[-18, -0.12, -0.75]}
+              rotation={[0, 0, Math.PI / 2]}
+            />
+            <mesh
+              name="cs50_frame_2"
+              geometry={nodes.cs50_frame_2.geometry}
+              material={materials["table _brown"]}
+              castShadow
+              receiveShadow
+              position={[0, -15.11, -0.75]}
+            />
+            <mesh
+              name="cs50_frame_1"
+              geometry={nodes.cs50_frame_1.geometry}
+              material={materials["table _brown"]}
+              castShadow
+              receiveShadow
+              position={[0, 15.13, -0.75]}
+            />
+            <mesh
+              name="cs50_paper"
+              geometry={nodes.cs50_paper.geometry}
+              material={materials["cs50_paper Material"]}
+              castShadow
+              receiveShadow
+              position={[0, 0.13, -0.44]}
+            />
+          </group>
+          <group name="mouse_1_g" position={[-24.96, -71.5, -135.24]}>
+            <mesh
+              name="mouse_1"
+              geometry={nodes.mouse_1.geometry}
+              material={materials.safe_grey}
+              castShadow
+              receiveShadow
+              position={[-0.31, 0.13, 0.74]}
+              rotation={[-Math.PI / 2, 0, -Math.PI / 2]}
+            />
+            <mesh
+              name="mousepad_1"
+              geometry={nodes.mousepad_1.geometry}
+              material={materials.road}
+              castShadow
+              receiveShadow
+              position={[0, -1.63, 0]}
+              rotation={[-Math.PI / 2, 0, 0]}
+            />
+          </group>
+          <group name="keyboard_1" position={[9.01, -72.54, -133.7]}>
+            <mesh
+              name="keyboard_1_key"
+              geometry={nodes.keyboard_1_key.geometry}
+              material={materials.safe_grey}
+              castShadow
+              receiveShadow
+              position={[-15.37, 0.46, -3.77]}
+              rotation={[-Math.PI / 2, 0, 0]}
+            />
+            <mesh
+              name="keyboard_1_body"
+              geometry={nodes.keyboard_1_body.geometry}
+              material={materials.piano_body}
+              castShadow
+              receiveShadow
+              position={[0, -0.71, 0]}
+              rotation={[-Math.PI / 2, 0, 0]}
+            />
+          </group>
+          <group name="monitor_1" position={[6.49, -57.17, -163.83]}>
+            <mesh
+              name="monitor_1_screen"
+              geometry={nodes.monitor_1_screen.geometry}
+              material={materials.piano_body}
+              castShadow
+              receiveShadow
+              position={[0, -9.09, 0.23]}
+              rotation={[-Math.PI / 2, 0, 0]}
+            />
+            <mesh
+              name="monitor_1_leg_3"
+              geometry={nodes.monitor_1_leg_3.geometry}
+              material={materials.piano_body}
+              castShadow
+              receiveShadow
+              position={[0.03, -10.38, -2.02]}
+              rotation={[-1.22, 0, 0]}
+            />
+            <mesh
+              name="monitor_1_leg_2"
+              geometry={nodes.monitor_1_leg_2.geometry}
+              material={materials.piano_body}
+              castShadow
+              receiveShadow
+              position={[-4.16, -15.79, -0.13]}
+              rotation={[-Math.PI / 2, 0, Math.PI / 4]}
+            />
+            <mesh
+              name="monitor_1_leg_1"
+              geometry={nodes.monitor_1_leg_1.geometry}
+              material={materials.piano_body}
+              castShadow
+              receiveShadow
+              position={[3.82, -15.91, 0.13]}
+              rotation={[-Math.PI / 2, 0, -Math.PI / 4]}
+            />
+          </group>
+          <group
+            name="chair_1"
+            position={[12.32, -113.29, -72.65]}
+            scale={1.23}
+          >
+            <mesh
+              name="chair_one_connector"
+              geometry={nodes.chair_one_connector.geometry}
+              material={materials.safe_grey}
+              castShadow
+              receiveShadow
+              position={[0.46, 8.77, 15.29]}
+              rotation={[-0.79, -0.01, 3.13]}
+            />
+            <mesh
+              name="chair_1_back"
+              geometry={nodes.chair_1_back.geometry}
+              material={materials.lock_yellow}
+              castShadow
+              receiveShadow
+              position={[0.46, 28.73, 21.48]}
+              rotation={[-Math.PI, 0.02, -Math.PI]}
+            />
+            <mesh
+              name="chair_1_seat"
+              geometry={nodes.chair_1_seat.geometry}
+              material={materials.lock_yellow}
+              castShadow
+              receiveShadow
+              position={[0.69, 0.46, -1.69]}
+              rotation={[-Math.PI / 2, 0, 3.12]}
+            />
+            <mesh
+              name="chair_1_col"
+              geometry={nodes.chair_1_col.geometry}
+              material={materials.safe_grey}
+              castShadow
+              receiveShadow
+              position={[0.42, -11.46, -1.53]}
+              rotation={[Math.PI, 0.02, Math.PI]}
+            />
+            <group
+              name="chair_1_leg_g"
+              position={[0, -28.04, -1.42]}
+              rotation={[-0.17, 0, 0]}
+            >
+              <mesh
+                name="chair_1_leg_4"
+                geometry={nodes.chair_1_leg_4.geometry}
+                material={materials.safe_grey}
+                castShadow
+                receiveShadow
+                position={[0.38, -0.08, 10.58]}
+                rotation={[2.01, 0.01, -3.13]}
+              />
+              <mesh
+                name="chair_1_leg_3"
+                geometry={nodes.chair_1_leg_3.geometry}
+                material={materials.safe_grey}
+                castShadow
+                receiveShadow
+                position={[10.13, 0, -0.3]}
+                rotation={[2.01, -0.43, -1.47]}
+              />
+              <mesh
+                name="chair_1_leg_2"
+                geometry={nodes.chair_1_leg_2.geometry}
+                material={materials.safe_grey}
+                castShadow
+                receiveShadow
+                position={[0.62, 2.66, -9.97]}
+                rotation={[1.4, 0, -3.12]}
+              />
+              <mesh
+                name="chair_1_leg_1"
+                geometry={nodes.chair_1_leg_1.geometry}
+                material={materials.safe_grey}
+                castShadow
+                receiveShadow
+                position={[-9.73, 2.01, -0.41]}
+                rotation={[2, 0.27, 1.59]}
+              />
+            </group>
+          </group>
+          <group name="mug_1_g" position={[-33.22, -62.44, -159.01]}>
+            <mesh
+              name="mug_cyl_1"
+              geometry={nodes.mug_cyl_1.geometry}
+              material={materials.pot}
+              castShadow
+              receiveShadow
+              position={[-3.83, 2.87, 0.6]}
+              rotation={[0.22, -0.21, 0.23]}
+            />
+            <mesh
+              name="mug_1"
+              geometry={nodes.mug_1.geometry}
+              material={materials.plant}
+              castShadow
+              receiveShadow
+              position={[0.22, -4.75, 0]}
+            />
+          </group>
           <group name="hand_1" position={[54.59, -46.78, -102.54]}>
             <group name="hand_forearm_g" position={[0, -22.57, -17.87]}>
               <group
                 name="hand_palm_g"
-                position={[0, 45.85, 21.96]}
+                position={[0, 48.73, 27.57]}
                 rotation={[-0.47, 0, 0]}
               >
                 <mesh
@@ -239,8 +552,8 @@ export default function Scene({ ...props }) {
               rotation={[-Math.PI / 2, 0, 0]}
             />
           </group>
-          <group name="safe_1" position={[-151.5, 47.6, 111.21]}>
-            <group name="safe_1_door_g" position={[17.8, -0.12, -23.81]}>
+          <group name="safe_1" position={[-155.4, -17.05, 113.88]}>
+            <group name="safe_1_door_g" position={[17.8, -0.12, 0.36]}>
               <mesh
                 name="safe_1_door"
                 geometry={nodes.safe_1_door.geometry}
@@ -357,10 +670,10 @@ export default function Scene({ ...props }) {
             material={materials.idk}
             castShadow
             receiveShadow
-            position={[45.09, -154.38, -13.03]}
+            position={[44.82, -154.38, 6.23]}
             rotation={[-Math.PI / 2, 0, 3.13]}
           />
-          <group name="security_1" position={[94.79, 16.25, -175.18]}>
+          <group name="security_1" position={[155.11, 50.22, -175.18]}>
             <mesh
               name="security_1_rect_10"
               geometry={nodes.security_1_rect_10.geometry}
@@ -456,12 +769,12 @@ export default function Scene({ ...props }) {
             material={materials[" closet_1"]}
             castShadow
             receiveShadow
-            position={[-155.82, 26.44, 113.11]}
+            position={[-155.82, -38.67, 113.11]}
             rotation={[0, Math.PI / 2, 0]}
           />
           <group
             name="closet_1"
-            position={[-111.22, -58.17, -29.86]}
+            position={[-111.22, -58.17, -58.8]}
             rotation={[0, Math.PI / 2, 0]}
           >
             <group name="t_shirt_12" position={[31.49, 45.42, -20.49]}>
@@ -1154,7 +1467,7 @@ export default function Scene({ ...props }) {
               rotation={[-Math.PI / 2, 0, 0]}
             />
           </group>
-          <group name="plant_2" position={[154.59, -105.03, 148.78]}>
+          <group name="plant_2" position={[154.59, -105.03, -142.68]}>
             <mesh
               name="plant_2_4"
               geometry={nodes.plant_2_4.geometry}
@@ -1290,587 +1603,6 @@ export default function Scene({ ...props }) {
             name="room_2_floor"
             geometry={nodes.room_2_floor.geometry}
             material={materials.room2_floor}
-            castShadow
-            receiveShadow
-            position={[0, -177.5, 0]}
-            rotation={[-Math.PI / 2, 0, 0]}
-          />
-        </group>
-        <group name="Room1" position={[100, 1064.55, 100]}>
-          <mesh
-            name="ball_1"
-            geometry={nodes.ball_1.geometry}
-            material={materials.arrow}
-            castShadow
-            receiveShadow
-            position={[5.94, -84.5, 17]}
-            rotation={[-Math.PI / 2, 0, 0]}
-          />
-          <group name="resume" position={[-75, 39.27, -175]}>
-            <mesh
-              name="resume_rect_2"
-              geometry={nodes.resume_rect_2.geometry}
-              material={materials["resume_rect_2 Material"]}
-              castShadow
-              receiveShadow
-              position={[0, -0.27, 1]}
-            />
-            <mesh
-              name="resume_rect_1"
-              geometry={nodes.resume_rect_1.geometry}
-              material={materials.pot}
-              castShadow
-              receiveShadow
-              position={[0, 0, -2]}
-            />
-          </group>
-          <group name="carpet_1" position={[87.82, -154.45, 34]}>
-            <mesh
-              name="carpet_1_circle_2"
-              geometry={nodes.carpet_1_circle_2.geometry}
-              material={materials.room1_floor}
-              castShadow
-              receiveShadow
-              position={[0, 0.44, 0]}
-              rotation={[-Math.PI / 2, 0, 0]}
-            />
-            <mesh
-              name="carpet_1_circle_1"
-              geometry={nodes.carpet_1_circle_1.geometry}
-              material={materials.idk}
-              castShadow
-              receiveShadow
-              position={[0, -1.44, 0]}
-              rotation={[-Math.PI / 2, 0, 0]}
-            />
-          </group>
-          <group name="plant_1" position={[-122.37, -105.03, -143.73]}>
-            <mesh
-              name="plant_1_4"
-              geometry={nodes.plant_1_4.geometry}
-              material={materials.plant}
-              castShadow
-              receiveShadow
-              position={[-5.54, -13.85, 10.56]}
-              rotation={[-1.53, 0.07, 1.75]}
-            />
-            <mesh
-              name="plant_1_3"
-              geometry={nodes.plant_1_3.geometry}
-              material={materials.plant}
-              castShadow
-              receiveShadow
-              position={[-2.01, -14.38, -3.72]}
-              rotation={[-1.75, 0, -1.81]}
-            />
-            <mesh
-              name="plant_1_2"
-              geometry={nodes.plant_1_2.geometry}
-              material={materials.plant}
-              castShadow
-              receiveShadow
-              position={[7.08, -12.64, 5.57]}
-              rotation={[-Math.PI / 2, 0.1, -Math.PI]}
-            />
-            <mesh
-              name="plant_1_1"
-              geometry={nodes.plant_1_1.geometry}
-              material={materials.plant}
-              castShadow
-              receiveShadow
-              position={[-7.68, -11.83, 5.57]}
-              rotation={[-Math.PI / 2, -0.06, 0]}
-            />
-            <mesh
-              name="pot_1"
-              geometry={nodes.pot_1.geometry}
-              material={materials.pot}
-              castShadow
-              receiveShadow
-              position={[-2.55, -217.56, 3.63]}
-            />
-          </group>
-          <group
-            name="cv_1"
-            position={[131, -89.95, 22.83]}
-            rotation={[0, Math.PI / 4, 0]}
-          >
-            <mesh
-              name="cv_rect_3"
-              geometry={nodes.cv_rect_3.geometry}
-              material={materials.piano_key_white}
-              castShadow
-              receiveShadow
-              position={[2.73, 4.61, 3.4]}
-              rotation={[-Math.PI / 2, 0, 0]}
-            />
-            <mesh
-              name="cv_rect_2"
-              geometry={nodes.cv_rect_2.geometry}
-              material={materials.piano_key_white}
-              castShadow
-              receiveShadow
-              position={[-2.78, -3.02, 4.17]}
-              rotation={[-Math.PI / 2, 0, -0.39]}
-            />
-            <mesh
-              name="cv_rect_1"
-              geometry={nodes.cv_rect_1.geometry}
-              material={materials.piano_key_white}
-              castShadow
-              receiveShadow
-              position={[-7.2, -0.06, -5.13]}
-              rotation={[-Math.PI / 2, 0, -0.68]}
-            />
-          </group>
-          <group
-            name="controller_1"
-            position={[55.57, -91.03, 7.95]}
-            rotation={[0.09, 0, 0]}
-            scale={1.66}
-          >
-            <mesh
-              name="controllet_1_circle_1"
-              geometry={nodes.controllet_1_circle_1.geometry}
-              material={materials["controllet_1_circle_1 Material"]}
-              castShadow
-              receiveShadow
-              position={[-1.79, 2.01, -0.79]}
-              rotation={[-Math.PI / 2, 0, 0]}
-              scale={1.72}
-            />
-            <mesh
-              name="controllet_1_circle_11"
-              geometry={nodes.controllet_1_circle_11.geometry}
-              material={materials["controllet_1_circle_11 Material"]}
-              castShadow
-              receiveShadow
-              position={[1.81, 2.01, -0.79]}
-              rotation={[-Math.PI / 2, 0, 0]}
-              scale={1.72}
-            />
-            <mesh
-              name="controllet_1_cube_3"
-              geometry={nodes.controllet_1_cube_3.geometry}
-              material={materials.piano_key_white}
-              castShadow
-              receiveShadow
-              position={[6.11, 0.27, 0.82]}
-              rotation={[-Math.PI / 2, 0, 2.18]}
-              scale={0.62}
-            />
-            <mesh
-              name="controllet_1_cube_2"
-              geometry={nodes.controllet_1_cube_2.geometry}
-              material={materials.piano_key_white}
-              castShadow
-              receiveShadow
-              position={[-6.11, 0.27, 0.59]}
-              rotation={[-Math.PI / 2, 0, 0.96]}
-              scale={0.62}
-            />
-            <mesh
-              name="controllet_1_cube_1"
-              geometry={nodes.controllet_1_cube_1.geometry}
-              material={materials.piano_key_white}
-              castShadow
-              receiveShadow
-              position={[-0.07, -0.01, -1.45]}
-              rotation={[-Math.PI / 2, 0, 0]}
-            />
-          </group>
-          <group name="tv" position={[83.06, -63.48, 177.1]}>
-            <mesh
-              name="tv_tri_2"
-              geometry={nodes.tv_tri_2.geometry}
-              material={materials.piano_body}
-              castShadow
-              receiveShadow
-              position={[-11.8, -37.9, 0]}
-              rotation={[Math.PI / 2, 1.22, -Math.PI / 2]}
-            />
-            <mesh
-              name="tv_tri_1"
-              geometry={nodes.tv_tri_1.geometry}
-              material={materials.piano_body}
-              castShadow
-              receiveShadow
-              position={[9.25, -37.9, 0]}
-              rotation={[-Math.PI / 2, 1.22, Math.PI / 2]}
-            />
-            <mesh
-              name="tv_rect_1"
-              geometry={nodes.tv_rect_1.geometry}
-              material={materials.piano_body}
-              castShadow
-              receiveShadow
-              position={[0, 6.06, -1.42]}
-            />
-          </group>
-          <group name="tv_table" position={[83, -131.7, 177.5]}>
-            <mesh
-              name="tv_table_cyl_4"
-              geometry={nodes.tv_table_cyl_4.geometry}
-              material={materials["tv_table_cyl_4 Material"]}
-              castShadow
-              receiveShadow
-              position={[65.86, -13.89, 9.39]}
-              rotation={[0, 0, 0.26]}
-            />
-            <mesh
-              name="tv_table_cyl_3"
-              geometry={nodes.tv_table_cyl_3.geometry}
-              material={materials["tv_table_cyl_3 Material"]}
-              castShadow
-              receiveShadow
-              position={[-65.57, -13.82, 9.39]}
-              rotation={[0, 0, -0.26]}
-            />
-            <mesh
-              name="tv_table_cyl_2"
-              geometry={nodes.tv_table_cyl_2.geometry}
-              material={materials["tv_table_cyl_2 Material"]}
-              castShadow
-              receiveShadow
-              position={[66.08, -13.83, -9.5]}
-              rotation={[0, 0, 0.26]}
-            />
-            <mesh
-              name="tv_table_cyl_1"
-              geometry={nodes.tv_table_cyl_1.geometry}
-              material={materials["tv_table_cyl_1 Material"]}
-              castShadow
-              receiveShadow
-              position={[-65.32, -13.89, -9.5]}
-              rotation={[0, 0, -0.26]}
-            />
-            <mesh
-              name="tv_table_rect"
-              geometry={nodes.tv_table_rect.geometry}
-              material={materials.piano_chair_leg}
-              castShadow
-              receiveShadow
-              position={[0, -4.44, 0]}
-              rotation={[-Math.PI / 2, 0, 0]}
-            />
-          </group>
-          <group name="tabel_1" position={[76.5, -124.59, 13.3]}>
-            <mesh
-              name="table_1_leg_4"
-              geometry={nodes.table_1_leg_4.geometry}
-              material={materials["table _brown"]}
-              castShadow
-              receiveShadow
-              position={[-84.73, -5.23, 33.5]}
-            />
-            <mesh
-              name="table_1_leg_3"
-              geometry={nodes.table_1_leg_3.geometry}
-              material={materials["table _brown"]}
-              castShadow
-              receiveShadow
-              position={[87.44, -5.23, 33.5]}
-            />
-            <mesh
-              name="table_1_leg_2"
-              geometry={nodes.table_1_leg_2.geometry}
-              material={materials["table _brown"]}
-              castShadow
-              receiveShadow
-              position={[87.44, -5.23, -32.5]}
-            />
-            <mesh
-              name="table_1_leg_1"
-              geometry={nodes.table_1_leg_1.geometry}
-              material={materials["table _brown"]}
-              castShadow
-              receiveShadow
-              position={[-85, -5.23, -32.5]}
-            />
-            <mesh
-              name="table_1_top"
-              geometry={nodes.table_1_top.geometry}
-              material={materials["table _brown"]}
-              castShadow
-              receiveShadow
-              position={[0, 18.38, 0]}
-              rotation={[-Math.PI / 2, 0, 0]}
-            />
-          </group>
-          <group name="piano_chair" position={[-110.07, -137.3, 84.52]}>
-            <mesh
-              name="piano_chair_cube"
-              geometry={nodes.piano_chair_cube.geometry}
-              material={materials["piano_chair_cube Material"]}
-              castShadow
-              receiveShadow
-              position={[0, 14.32, 0]}
-              rotation={[-Math.PI / 2, 0, 0]}
-            />
-            <mesh
-              name="piano_chair_cyl"
-              geometry={nodes.piano_chair_cyl.geometry}
-              material={materials.piano_chair_leg}
-              castShadow
-              receiveShadow
-              position={[-11.85, -3.32, -11.89]}
-            />
-          </group>
-          <group name="piano" position={[-144.75, -94.21, 153.21]}>
-            <mesh
-              name="black_keys"
-              geometry={nodes.black_keys.geometry}
-              material={materials.piano_body}
-              castShadow
-              receiveShadow
-              position={[1.35, 18.46, -12.82]}
-            />
-            <mesh
-              name="white_keys"
-              geometry={nodes.white_keys.geometry}
-              material={materials.piano_key_white}
-              castShadow
-              receiveShadow
-              position={[3.94, 16.97, -4.22]}
-              rotation={[-Math.PI / 2, 0, 0]}
-              scale={[1, 1.07, 1]}
-            />
-            <mesh
-              name="under_key"
-              geometry={nodes.under_key.geometry}
-              material={materials.piano_body}
-              castShadow
-              receiveShadow
-              position={[5.95, 14.45, -69.77]}
-              rotation={[-Math.PI / 2, 0, 0]}
-            />
-            <mesh
-              name="top_body"
-              geometry={nodes.top_body.geometry}
-              material={materials.piano_body}
-              castShadow
-              receiveShadow
-              position={[-14.66, 46.46, -68.24]}
-              rotation={[-Math.PI / 2, 0, 0]}
-            />
-            <mesh
-              name="back"
-              geometry={nodes.back.geometry}
-              material={materials.piano_body}
-              castShadow
-              receiveShadow
-              position={[-20.82, -0.26, -68.98]}
-              rotation={[-Math.PI / 2, 0, 0]}
-            />
-            <group name="right leg" position={[0, 0, -139.15]}>
-              <mesh
-                name="right_leg_cube_4"
-                geometry={nodes.right_leg_cube_4.geometry}
-                material={materials.piano_body}
-                castShadow
-                receiveShadow
-                position={[-12.24, 0, 0.73]}
-                rotation={[-Math.PI / 2, 0, 0]}
-              />
-              <mesh
-                name="right_leg_cube_3"
-                geometry={nodes.right_leg_cube_3.geometry}
-                material={materials.piano_body}
-                castShadow
-                receiveShadow
-                position={[8.75, -53.87, 0.73]}
-                rotation={[-Math.PI / 2, 0, 0]}
-              />
-              <mesh
-                name="right_leg_cube_2"
-                geometry={nodes.right_leg_cube_2.geometry}
-                material={materials.piano_body}
-                castShadow
-                receiveShadow
-                position={[12.16, 14.95, 0]}
-                rotation={[-Math.PI / 2, 0, 0]}
-              />
-              <mesh
-                name="right_leg_cube_1"
-                geometry={nodes.right_leg_cube_1.geometry}
-                material={materials.piano_body}
-                castShadow
-                receiveShadow
-                position={[19.82, -26.22, 0.97]}
-                rotation={[-Math.PI / 2, 0, 0]}
-              />
-            </group>
-            <group name="left lef">
-              <mesh
-                name="left_leg_cube_4"
-                geometry={nodes.left_leg_cube_4.geometry}
-                material={materials.piano_body}
-                castShadow
-                receiveShadow
-                position={[-12.24, 0, 0.73]}
-                rotation={[-Math.PI / 2, 0, 0]}
-              />
-              <mesh
-                name="left_leg_cube_3"
-                geometry={nodes.left_leg_cube_3.geometry}
-                material={materials.piano_body}
-                castShadow
-                receiveShadow
-                position={[8.75, -53.87, 0.73]}
-                rotation={[-Math.PI / 2, 0, 0]}
-              />
-              <mesh
-                name="left_leg_cube_2"
-                geometry={nodes.left_leg_cube_2.geometry}
-                material={materials.piano_body}
-                castShadow
-                receiveShadow
-                position={[12.16, 14.95, 0]}
-                rotation={[-Math.PI / 2, 0, 0]}
-              />
-              <mesh
-                name="left_leg_cube_1"
-                geometry={nodes.left_leg_cube_1.geometry}
-                material={materials.piano_body}
-                castShadow
-                receiveShadow
-                position={[19.82, -26.22, 0.97]}
-                rotation={[-Math.PI / 2, 0, 0]}
-              />
-            </group>
-          </group>
-          <group name="sofa" position={[107.72, -94.77, -126.56]}>
-            <mesh
-              name="sofa_cube_3"
-              geometry={nodes.sofa_cube_3.geometry}
-              material={materials.sofa_2}
-              castShadow
-              receiveShadow
-              position={[0.5, 20.33, -36.5]}
-              rotation={[-Math.PI / 2, 0, 0]}
-            />
-            <mesh
-              name="sofa_cube_2"
-              geometry={nodes.sofa_cube_2.geometry}
-              material={materials.sofa_2}
-              castShadow
-              receiveShadow
-              position={[0, -20.27, 0]}
-            />
-            <mesh
-              name="sofa_cube_1"
-              geometry={nodes.sofa_cube_1.geometry}
-              material={materials.sofa_2}
-              castShadow
-              receiveShadow
-              position={[0, -46.51, 0]}
-            />
-          </group>
-          <group name="linkedin" position={[101.41, 42.28, -124]} scale={0.1}>
-            <mesh
-              name="Merged Geometry"
-              geometry={nodes["Merged Geometry"].geometry}
-              material={materials["Merged Geometry Material"]}
-              receiveShadow
-              position={[-10.75, 3.5, -511]}
-            />
-            <mesh
-              name="linkedin_rect"
-              geometry={nodes.linkedin_rect.geometry}
-              material={materials["linkedin_rect Material"]}
-              castShadow
-              receiveShadow
-              position={[-10.69, 0, -532.64]}
-            />
-          </group>
-          <mesh
-            name="room_1_wall_right"
-            geometry={nodes.room_1_wall_right.geometry}
-            material={materials.room1_floor}
-            castShadow
-            receiveShadow
-            position={[0, 2.5, -200]}
-          />
-          <group name="room_1_windows_frame" position={[-175.5, 55.45, -41.52]}>
-            <mesh
-              name="room_1_windows_frame_rect_5"
-              geometry={nodes.room_1_windows_frame_rect_5.geometry}
-              material={materials["table _brown"]}
-              castShadow
-              receiveShadow
-              position={[-1.5, 2.62, -53.29]}
-              rotation={[-Math.PI / 2, Math.PI / 2, 0]}
-            />
-            <mesh
-              name="room_1_windows_frame_rect_4"
-              geometry={nodes.room_1_windows_frame_rect_4.geometry}
-              material={materials["table _brown"]}
-              castShadow
-              receiveShadow
-              position={[-1.5, 2.33, 53.29]}
-              rotation={[-Math.PI / 2, Math.PI / 2, 0]}
-            />
-            <mesh
-              name="room_1_windows_frame_rect_3"
-              geometry={nodes.room_1_windows_frame_rect_3.geometry}
-              material={materials["table _brown"]}
-              castShadow
-              receiveShadow
-              position={[-1.5, -23.6, 0]}
-              rotation={[0, Math.PI / 2, 0]}
-            />
-            <mesh
-              name="room_1_windows_frame_rect_2"
-              geometry={nodes.room_1_windows_frame_rect_2.geometry}
-              material={materials["table _brown"]}
-              castShadow
-              receiveShadow
-              position={[-1.5, -69.05, 0]}
-              rotation={[0, Math.PI / 2, 0]}
-            />
-            <mesh
-              name="room_1_windows_frame_rect_1"
-              geometry={nodes.room_1_windows_frame_rect_1.geometry}
-              material={materials["table _brown"]}
-              castShadow
-              receiveShadow
-              position={[-1.5, 69.05, 0]}
-              rotation={[0, Math.PI / 2, 0]}
-            />
-          </group>
-          <mesh
-            name="room_1_window"
-            geometry={nodes.room_1_window.geometry}
-            material={materials.room1_floor}
-            castShadow
-            receiveShadow
-            position={[-189, 2.5, 0]}
-          >
-            <mesh
-              name="room_1_window_cube"
-              geometry={nodes.room_1_window_cube.geometry}
-              material={materials["room_1_window_cube Material"]}
-              visible={false}
-              castShadow
-              receiveShadow
-              position={[0.08, 52.33, -41.52]}
-              rotation={[0, Math.PI / 2, 0]}
-            />
-            <mesh
-              name="room_1_wall_left"
-              geometry={nodes.room_1_wall_left.geometry}
-              material={materials.room1_floor}
-              visible={false}
-              castShadow
-              receiveShadow
-              position={[-11, 0, 0]}
-              rotation={[0, Math.PI / 2, 0]}
-            />
-          </mesh>
-          <mesh
-            name="room_1_floor"
-            geometry={nodes.room_1_floor.geometry}
-            material={materials.room1_floor}
             castShadow
             receiveShadow
             position={[0, -177.5, 0]}
