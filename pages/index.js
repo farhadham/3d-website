@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 import { Html } from "@react-three/drei";
 import Router from "next/router";
 import Head from "next/head";
-
 import BarLoader from "react-spinners/BarLoader";
 
 const override = {
@@ -43,6 +42,7 @@ export default function Home() {
           content="Farhad Faraji personal website, Front-end and Back-end web developer"
         ></meta>
       </Head>
+
       <Web />
     </>
   ) : null;
