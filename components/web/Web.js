@@ -25,9 +25,12 @@ function Loader() {
 const Web = () => {
   const [level, setLevel] = useState(1);
   const [linkedinHover, setLinkedinHover] = useState(false);
+  const [resumeHover, setResumeHover] = useState(false);
 
   return (
-    <Global.Provider value={{ linkedinHover, setLinkedinHover }}>
+    <Global.Provider
+      value={{ linkedinHover, setLinkedinHover, resumeHover, setResumeHover }}
+    >
       <main className="h-screen mx-auto flex flex-col lg:flex-row">
         <div className="h-3/6 lg:h-full  flex flex-col justify-center items-center lg:w-4/12 relative">
           <Hero level={level} />

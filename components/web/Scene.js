@@ -3,7 +3,7 @@ import useSpline from "@splinetool/r3f-spline";
 import { OrthographicCamera } from "@react-three/drei";
 import { PresentationControls } from "@react-three/drei";
 import FirstFloor from "./FirstFloor";
-import Road from "./Road";
+import SecondFloor from "./SecondFloor";
 
 {
   /* <PresentationControls
@@ -19,6 +19,8 @@ const Scene = ({ level }) => {
     "https://prod.spline.design/bXEEf3I1GJp1oEhU/scene.splinecode"
   );
 
+  console.log(nodes);
+
   return (
     <>
       <color attach="background" args={["#464646"]} />
@@ -28,8 +30,8 @@ const Scene = ({ level }) => {
         polar={[0, 0]}
         azimuth={[-Math.PI / 6, Math.PI / 6]}
       >
-        <Road nodes={nodes} materials={materials} level={level} />
         <FirstFloor nodes={nodes} materials={materials} level={level} />
+        <SecondFloor nodes={nodes} materials={materials} level={level} />
         <mesh
           name="ground"
           geometry={nodes.ground.geometry}

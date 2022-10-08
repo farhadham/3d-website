@@ -13,6 +13,13 @@ const Hero = ({ level }) => {
     value.setLinkedinHover(false);
   };
 
+  const handleResumeEnter = (e) => {
+    value.setResumeHover(true);
+  };
+  const handleResumeLeaver = (e) => {
+    value.setResumeHover(false);
+  };
+
   return (
     <AnimatePresence>
       {level === 1 && (
@@ -46,6 +53,8 @@ const Hero = ({ level }) => {
               onClick={() => {
                 window.open("https://resume-farhadham.vercel.app/", "_blank");
               }}
+              onMouseEnter={handleResumeEnter}
+              onMouseLeave={handleResumeLeaver}
             >
               Download CV
             </Button>

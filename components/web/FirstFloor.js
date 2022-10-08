@@ -29,13 +29,19 @@ const FirstFloor = ({ nodes, materials, level }) => {
         rotation={[-Math.PI / 2, 0, 0]}
       />
       <group name="resume" position={[-75, 39.27, -175]}>
-        <mesh
+        <motion.mesh
           name="resume_rect_2"
           geometry={nodes.resume_rect_2.geometry}
           material={materials["resume_rect_2 Material"]}
           castShadow
           receiveShadow
           position={[0, -0.27, 1]}
+          animate={{ z: value.resumeHover ? 30 : 1 }}
+          transition={{
+            type: "spring",
+            damping: 20,
+            stiffness: 200,
+          }}
         />
         <mesh
           name="resume_rect_1"
@@ -492,7 +498,12 @@ const FirstFloor = ({ nodes, materials, level }) => {
         name="linkedin"
         position={[101.41, 42.28, -124]}
         scale={0.1}
-        animate={{ z: value.linkedinHover ? -80 : -124 }}
+        animate={{ z: value.linkedinHover ? -90 : -124 }}
+        transition={{
+          type: "spring",
+          damping: 20,
+          stiffness: 200,
+        }}
       >
         <mesh
           name="Merged Geometry"
@@ -520,8 +531,8 @@ const FirstFloor = ({ nodes, materials, level }) => {
       />
       <group name="room_1_windows_frame" position={[-175.5, 55.45, -41.52]}>
         <mesh
-          name="Rectangle 3"
-          geometry={nodes["Rectangle 3"].geometry}
+          name="room_1_windows_frame_rect_5"
+          geometry={nodes.room_1_windows_frame_rect_5.geometry}
           material={materials["table _brown"]}
           castShadow
           receiveShadow
@@ -529,8 +540,8 @@ const FirstFloor = ({ nodes, materials, level }) => {
           rotation={[-Math.PI / 2, Math.PI / 2, 0]}
         />
         <mesh
-          name="Rectangle 2"
-          geometry={nodes["Rectangle 2"].geometry}
+          name="room_1_windows_frame_rect_4"
+          geometry={nodes.room_1_windows_frame_rect_4.geometry}
           material={materials["table _brown"]}
           castShadow
           receiveShadow
@@ -538,8 +549,8 @@ const FirstFloor = ({ nodes, materials, level }) => {
           rotation={[-Math.PI / 2, Math.PI / 2, 0]}
         />
         <mesh
-          name="Rectangle 5"
-          geometry={nodes["Rectangle 5"].geometry}
+          name="room_1_windows_frame_rect_3"
+          geometry={nodes.room_1_windows_frame_rect_3.geometry}
           material={materials["table _brown"]}
           castShadow
           receiveShadow
@@ -547,8 +558,8 @@ const FirstFloor = ({ nodes, materials, level }) => {
           rotation={[0, Math.PI / 2, 0]}
         />
         <mesh
-          name="Rectangle 4"
-          geometry={nodes["Rectangle 4"].geometry}
+          name="room_1_windows_frame_rect_2"
+          geometry={nodes.room_1_windows_frame_rect_2.geometry}
           material={materials["table _brown"]}
           castShadow
           receiveShadow
@@ -556,8 +567,8 @@ const FirstFloor = ({ nodes, materials, level }) => {
           rotation={[0, Math.PI / 2, 0]}
         />
         <mesh
-          name="Rectangle"
-          geometry={nodes.Rectangle.geometry}
+          name="room_1_windows_frame_rect_1"
+          geometry={nodes.room_1_windows_frame_rect_1.geometry}
           material={materials["table _brown"]}
           castShadow
           receiveShadow
